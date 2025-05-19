@@ -69,7 +69,6 @@ export default function Home() {
 
         {/* Text Block 1 */}
         <div className="flex flex-wrap justify-center items-center mb-3 text-center">
-
           <p className="w-full sm:w-auto">
             I’ve worked in <strong className="ml-2">four startups</strong>,
             picking up lessons and debugging nightmares here
@@ -169,64 +168,82 @@ export default function Home() {
       </div>
 
       <div className="mt-10 text-[14px] md:text-[18px] text-[#aeaeae] flex items-center justify-center text-center italic hover:text-[#000] max-w-xs sm:max-w-md mx-auto">
-        .𖥔 ݁ ˖ ✦ ‧₊˚ ⋅ Before you click away, let’s verify I’m a real hooman .𖥔
-        ݁ ˖ ✦ ‧₊˚ ⋅
+        <div className="flex flex-row justify-center items-center mb-3 text-center">
+          <p className="w-full sm:w-auto">
+          Would I rather be feared or loved? Easy. <strong>Loved. On socials.</strong>
+          </p>
+          <span className="flex items-center mx-2 p-1 border-[0.5] border-gray-800/10 shadow-md hover:scale-110 hover:rotate-[5deg] rounded-md bg-white backdrop-blur-md">
+            <Image
+              src="/dwight.jpg"
+              alt="Landing Page Photo"
+              width={70}
+              height={70}
+              className="rounded-md"
+            />
+          </span>
+        </div>
       </div>
 
       <div className="flex flex-wrap gap-x-6 gap-y-4 items-center justify-center my-8 max-w-xs sm:max-w-md mx-auto">
-    <button
+        <a
           className="flex cursor-pointer items-center justify-center border-2 border-[#000] bg-transparent 
   shadow-xl w-10 h-10 aspect-square rounded-full 
   transition-transform duration-300 hover:scale-110 text-[#000] hover:bg-[#000] hover:text-[#fff]"
           href="https://x.com/lasitha_e"
           target="_blank"
+          rel="noopener noreferrer"
         >
           <XLogo size={22} className="" weight="bold" />
-        </button>
-        <button
+        </a>
+        <a
           className="flex cursor-pointer items-center justify-center border-2 border-[#FF5555] bg-[#fff] shadow-xl w-10 h-10 aspect-square rounded-full 
   transition-transform duration-300 hover:scale-110 hover:bg-[#FF5555] text-[#FF5555] hover:text-white"
           href="https://www.youtube.com/@lassinotlassi"
           target="_blank"
+          rel="noopener noreferrer"
         >
           <YoutubeLogo size={22} weight="fill" />
-        </button>
+        </a>
 
-        <button
+        <a
           className="flex cursor-pointer items-center justify-center border-2 border-[#C13584] bg-[#fff] shadow-xl w-10 h-10 aspect-square rounded-full 
   transition-transform duration-300 hover:scale-110 hover:bg-[#C13584] text-[#C13584] hover:text-white"
           href="https://www.instagram.com/lassinotlassii"
           target="_blank"
-        > 
+          rel="noopener noreferrer"
+        >
           <InstagramLogo size={22} weight="bold" />
-        </button>
+        </a>
 
-        <button
+        <a
           className="flex cursor-pointer items-center justify-center border-2 border-[#0072b1] bg-[#fff] shadow-xl w-10 h-10 aspect-square rounded-full 
   transition-transform duration-300 hover:scale-110 hover:bg-[#0072b1] text-[#0072b1] hover:text-white"
           href="https://www.linkedin.com/in/lasithae/"
           target="_blank"
+          rel="noopener noreferrer"
         >
           <LinkedinLogo size={22} weight="bold" />
-        </button>
+        </a>
 
-        <button
+        <a
           className="flex cursor-pointer items-center justify-center border-2 border-[#000] bg-[#fff] shadow-xl w-10 h-10 aspect-square rounded-full 
   transition-transform duration-300 hover:scale-110 hover:bg-[#000] text-[#000] hover:text-white"
           href="mailto:lasithaeaswaran@gmail.com"
           target="_blank"
+          rel="noopener noreferrer"
         >
           <Envelope size={22} weight="bold" />
-        </button>
+        </a>
 
-        <button
+        <a
           className="flex cursor-pointer items-center justify-center border-2 border-[#424242] bg-[#fff] shadow-xl w-10 h-10 aspect-square rounded-full 
   transition-transform duration-300 hover:scale-110 hover:bg-[#424242] text-[#424242] hover:text-white"
           href="https://lasithae.substack.com/"
           target="_blank"
+          rel="noopener noreferrer"
         >
           <Bookmark size={22} weight="bold" />
-        </button>
+        </a>
       </div>
     </>
   );
