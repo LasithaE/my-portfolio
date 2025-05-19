@@ -191,7 +191,7 @@ const Work = () => {
                 className=""
               />
               <span className="mt-2 text-sm text-gray-700 bg-gray-100 px-3 py-1 w-[100px] items-center justify-center flex flex-col rounded-md shadow-sm line-clamp-2 text-center">
-                {"Product Work Experience"}
+                {"Product Work Exp"}
               </span>
             </div>
             <div
