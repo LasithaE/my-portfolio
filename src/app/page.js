@@ -19,7 +19,7 @@ export default function Home() {
         <div className="relative flex justify-center items-center w-full md:w-1/2 group">
           {/* First Image - Left */}
           <Image
-            src="/monitor.JPG"
+            src="/monitor.jpg"
             alt="Landing Page Photo"
             width={300}
             height={300}
