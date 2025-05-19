@@ -11,16 +11,103 @@
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
+ 
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+.polka-dot {
+  background-color: white;
+  background-image: radial-gradient(#e8e8e8 1px, transparent 1px);
+  background-size: 12px 12px;
+}
+.scrollbar-hide {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 
+.scrollbar-hide::-webkit-scrollbar {
+  display: none; 
+}
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+  -ms-overflow-style: none; 
+  scrollbar-width: none;
 }
+body::-webkit-scrollbar {
+  display: none !important;
+}
+.font-fleur-de-leah {
+  font-family: "Fleur De Leah", sans-serif;
+}
+.font-eb-garamond {
+  font-family: "EB Garamond", sans-serif;
+}
+.font-jost {
+  font-family: "Jost", sans-serif;
+}
+.font-pixelify {
+  font-family: "Pixelify Sans", sans-serif;
+}
+.font-inter {
+  font-family: "Inter-Tight", sans-serif;
+}
+.icon-container {
+  transition: transform 0.3s ease;
+}
+.icon-container:hover {
+  transform: translate(10px, -10px);
+}
+
+@keyframes jump1 {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(-20px, -30px);
+  }
+}
+@keyframes jump2 {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(30px, 90px);
+  }
+}
+@keyframes jump3 {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(-30px, 90px);
+  }
+}
+@keyframes jump4 {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(30px, -30px);
+  }
+}
+.icon-wrapper {
+  position: absolute;
+  transition: transform 0.9s ease;
+}
+
+.icon-wrapper:nth-child(1) {
+  transform: translate(-20px, -30px);
+  animation: jump1 0.5s ease;
+} /* XLogo */
+.icon-wrapper:nth-child(2) {
+  transform: translate(30px, 80px);
+  animation: jump2 0.5s ease;
+} /* YoutubeLogo */
+.icon-wrapper:nth-child(3) {
+  transform: translate(-40px, 120px);
+  animation: jump3 0.5s ease;
+} /* InstagramLogo */
+.icon-wrapper:nth-child(4) {
+  transform: translate(40px, -30px);
+  animation: jump4 0.5s ease;
+} /* LinkedinLogo */
