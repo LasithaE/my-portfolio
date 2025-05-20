@@ -15,8 +15,8 @@ const Work = () => {
   const [openWorkModal, setOpenWorkModal] = useState();
   return (
     <>
-      <div className="my-8">
-        <div className="p-5 md:px-0 mx-auto text-center">
+      <div className="my-8 md:mx-30">
+        <div className="p-5 md:px-0 text-center">
           Over the past few years, I’ve{" "}
           <strong>built user-facing products</strong> at{" "}
           <strong>early-stage startups</strong>—often as the{" "}
@@ -136,7 +136,7 @@ const Work = () => {
             </a>
           </div>
           {/* Haphazard absolute layout on md+ screens */}
-          <div className="hidden md:block w-full h-full relative">
+          <div className="hidden md:block h-full relative">
             <div
               className="absolute top-4 left-25 flex flex-col items-center"
               onClick={() => {

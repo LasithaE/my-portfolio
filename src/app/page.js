@@ -170,7 +170,8 @@ export default function Home() {
       <div className="mt-10 text-[14px] md:text-[18px] text-[#aeaeae] flex items-center justify-center text-center italic hover:text-[#000] max-w-xs sm:max-w-md mx-auto">
         <div className="flex flex-row justify-center items-center mb-3 text-center">
           <p className="w-full sm:w-auto">
-          Would I rather be feared or loved? Easy. <strong>Loved. On socials.</strong>
+            Would I rather be feared or loved? Easy.{" "}
+            <strong>Loved. On socials.</strong>
           </p>
           <span className="flex items-center mx-2 p-1 border-[0.5] border-gray-800/10 shadow-md hover:scale-110 hover:rotate-[5deg] rounded-md bg-white backdrop-blur-md">
             <Image
