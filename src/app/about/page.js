@@ -152,7 +152,7 @@ export default function About() {
             className="h-[250px] w-[165px] my-5 rounded-lg shadow-2xl"
           />
           <Image
-            src="/cute.jpg"
+            src="/cute.JPG"
             alt="cubbon"
             width={100}
             height={140}
