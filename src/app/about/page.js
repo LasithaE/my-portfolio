@@ -16,7 +16,7 @@ export default function About() {
       <div className="font-jost text-[36px] font-semibold text-gray-800 italic">
         Get to know me more!
       </div>
-      <div className="mx-40 p-6 font-jost text-[22px] text-[#424141]">
+      <div className="mx-10 md:mx-40 p-6 font-jost text-[22px] text-[#424141]">
         <motion.p
           initial="hidden"
           whileInView="visible"
@@ -49,7 +49,7 @@ export default function About() {
           whileInView="visible"
           viewport={{ once: true }}
           variants={sectionVariants}
-          className="flex flex-row gap-6 my-15 items-center justify-center"
+          className="flex flex-col sm:flex-row gap-6 my-15 items-center justify-center"
         >
           <Image
             src="/thinking.png"
@@ -92,7 +92,7 @@ export default function About() {
           whileInView="visible"
           viewport={{ once: true }}
           variants={sectionVariants}
-          className="flex flex-row gap-6 my-15 items-center justify-center"
+          className="flex flex-col sm:flex-row gap-6 my-15 items-center justify-center"
         >
           <Image
             src="/reading.png"
@@ -144,7 +144,7 @@ export default function About() {
           whileInView="visible"
           viewport={{ once: true }}
           variants={sectionVariants}
-          className="flex flex-row gap-6 my-15 items-center justify-center"
+          className="flex flex-col sm:flex-row gap-6 my-15 items-center justify-center"
         >
           <Image
             src="/flight.png"
@@ -188,7 +188,9 @@ export default function About() {
             rel="noopener noreferrer"
           >
             {" "}
-            <span className="border-b border-dashed border-gray-600">let’s connect! 💬.</span>
+            <span className="border-b border-dashed border-gray-600">
+              let’s connect! 💬.
+            </span>
           </a>
         </motion.p>
       </div>
