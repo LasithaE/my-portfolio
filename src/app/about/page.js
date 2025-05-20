@@ -50,14 +50,14 @@ export default function About() {
           className="flex flex-row gap-6 my-15 items-center justify-center"
         >
           <Image
-            src="/thinking.jpg"
+            src="/thinking.png"
             alt="Me questioning my life choices"
             width={100}
             height={140}
             className="h-[250px] w-[185px] rounded-lg shadow-2xl"
           />
           <Image
-            src="/monitor.jpg"
+            src="/monitor.png"
             alt="A roadmap to my career switch"
             width={100}
             height={140}
@@ -93,28 +93,28 @@ export default function About() {
           className="flex flex-row gap-6 my-15 items-center justify-center"
         >
           <Image
-            src="/reading.jpg"
+            src="/reading.png"
             alt="reading"
             width={100}
             height={140}
             className="h-[250px] w-[150px] my-5 rounded-lg shadow-2xl"
           />
           <Image
-            src="/cooking.jpg"
+            src="/cooking.png"
             alt="cooking"
             width={100}
             height={140}
             className="h-[250px] w-[150px] my-5 rounded-lg shadow-2xl"
           />
           <Image
-            src="/beach.jpg"
+            src="/beach.png"
             alt="beach"
             width={100}
             height={140}
             className="h-[250px] w-[185px] my-5 rounded-lg shadow-2xl"
           />
           <Image
-            src="/mountain.jpg"
+            src="/mountain.png"
             alt="mountain"
             width={100}
             height={140}
@@ -145,21 +145,21 @@ export default function About() {
           className="flex flex-row gap-6 my-15 items-center justify-center"
         >
           <Image
-            src="/flight.jpg"
+            src="/flight.png"
             alt="travel"
             width={100}
             height={140}
             className="h-[250px] w-[165px] my-5 rounded-lg shadow-2xl"
           />
           <Image
-            src="/cute.JPG"
+            src="/cute.png"
             alt="cubbon"
             width={100}
             height={140}
             className="h-[250px] w-[185px] my-5 rounded-lg shadow-2xl"
           />
           <Image
-            src="/vlog.jpg"
+            src="/vlog.png"
             alt="log"
             width={100}
             height={140}
