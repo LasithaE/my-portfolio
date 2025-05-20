@@ -54,7 +54,7 @@ export const resume = [
     ],
   },
   {
-    icon: "/cied_logo.jpeg",
+    icon: "/cied_logo.png",
     company: "CIED Technologies",
     location: "Kochi, India",
     title: "Backend Django Developer Intern",

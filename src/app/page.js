@@ -19,7 +19,7 @@ export default function Home() {
         <div className="relative flex justify-center items-center w-full md:w-1/2 group">
           {/* First Image - Left */}
           <Image
-            src="/monitor.jpg"
+            src="/monitor.png"
             alt="Landing Page Photo"
             width={300}
             height={300}
@@ -29,7 +29,7 @@ export default function Home() {
 
           {/* Second Image - Right */}
           <Image
-            src="/cute.JPG"
+            src="/cute.png"
             alt="Landing Page Photo"
             width={300}
             height={300}
@@ -48,7 +48,7 @@ export default function Home() {
 
           {/* Main Image */}
           <Image
-            src="/landing.JPG"
+            src="/landing.png"
             alt="Landing Page Photo"
             width={300}
             height={300}
@@ -75,7 +75,7 @@ export default function Home() {
           </p>
           <span className="flex items-center mx-2 p-1 border-1 border-gray-800/10 shadow-md hover:scale-110 hover:rotate-[5deg] rounded-md bg-white backdrop-blur-md">
             <Image
-              src="/setup.jpg"
+              src="/setup.png"
               alt="Landing Page Photo"
               width={50}
               height={50}
@@ -92,7 +92,7 @@ export default function Home() {
           </p>
           <span className="flex items-center mx-2 p-1 border-1 border-gray-800/10 shadow-md hover:scale-110 hover:rotate-[5deg] rounded-md bg-white backdrop-blur-md">
             <Image
-              src="/coffee.jpg"
+              src="/coffee.png"
               alt="Landing Page Photo"
               width={50}
               height={50}
@@ -109,7 +109,7 @@ export default function Home() {
           </p>
           <span className="flex w-[52px] mr-2 h-[52px] items-center ml-2 p-1 border-1 border-gray-800/10 shadow-md hover:scale-110 hover:rotate-[5deg] rounded-md bg-white backdrop-blur-md">
             <Image
-              src="/sadhya.jpg"
+              src="/sadhya.png"
               alt="Landing Page Photo"
               width={45}
               height={45}
@@ -122,7 +122,7 @@ export default function Home() {
           </p>
           <span className="flex items-center mx-2 p-1 border-1 border-gray-800/10 shadow-md hover:scale-110 hover:rotate-[5deg] rounded-md bg-white backdrop-blur-md">
             <Image
-              src="/blr.jpg"
+              src="/blr.png"
               alt="Landing Page Photo"
               width={50}
               height={50}
@@ -143,7 +143,7 @@ export default function Home() {
           </p>
           <span className="flex items-center mx-2 p-1 border-1 border-gray-800/10 shadow-md hover:scale-110 hover:rotate-[5deg] rounded-md bg-white backdrop-blur-md">
             <Image
-              src="/homefood.JPG"
+              src="/homefood.png"
               alt="Landing Page Photo"
               width={50}
               height={50}
@@ -157,7 +157,7 @@ export default function Home() {
           </p>
           <span className="flex items-center mx-2 p-1 border-1 border-gray-800/10 shadow-md hover:scale-110 hover:rotate-[5deg] rounded-md bg-white backdrop-blur-md">
             <Image
-              src="/waffle.JPG"
+              src="/waffle.png"
               alt="Landing Page Photo"
               width={50}
               height={50}
@@ -174,7 +174,7 @@ export default function Home() {
           </p>
           <span className="flex items-center mx-2 p-1 border-[0.5] border-gray-800/10 shadow-md hover:scale-110 hover:rotate-[5deg] rounded-md bg-white backdrop-blur-md">
             <Image
-              src="/dwight.jpg"
+              src="/dwight.png"
               alt="Landing Page Photo"
               width={70}
               height={70}
