@@ -15,8 +15,8 @@ const Work = () => {
   const [openWorkModal, setOpenWorkModal] = useState();
   return (
     <>
-      <div className="mt-8">
-        <div className="mx-auto text-center">
+      <div className="my-8">
+        <div className="p-5 md:px-0 mx-auto text-center">
           Over the past few years, I’ve{" "}
           <strong>built user-facing products</strong> at{" "}
           <strong>early-stage startups</strong>—often as the{" "}
@@ -116,17 +116,24 @@ const Work = () => {
                 </span>
               </div>
             </div>
-            <div className="flex flex-col mt-4 items-center">
-              <Image
-                src="/textfile.png"
-                alt="Landing Page Photo"
-                width={100}
-                height={100}
-              />
-              <span className="mt-2 text-sm text-gray-700 bg-gray-100 px-3 py-1 rounded-md shadow-sm">
-                {"Downloadable Resume"}
-              </span>
-            </div>
+            <a href="/Lasitha_PM_Resume.pdf" download>
+              <div className="flex flex-col mt-4 items-center">
+                <Image
+                  src="/textfile.png"
+                  alt="Landing Page Photo"
+                  width={100}
+                  height={100}
+                />
+                <span className="mt-2 text-sm text-gray-700 bg-gray-100 py-1 w-[100px] rounded-md shadow-sm text-center">
+                  Downloadable Resume{" "}
+                  <CloudArrowDown
+                    size={12}
+                    className="inline ml-1"
+                    weight="bold"
+                  />
+                </span>
+              </div>
+            </a>
           </div>
           {/* Haphazard absolute layout on md+ screens */}
           <div className="hidden md:block w-full h-full relative">
@@ -147,19 +154,25 @@ const Work = () => {
                 {"Dev Work Experience"}
               </span>
             </div>
-            <div className="absolute top-40 left-[30%] flex flex-col items-center">
-              <Image
-                src="/textfile.png"
-                alt="Image 1"
-                width={100}
-                height={100}
-                className=""
-              />
-                           <span className="mt-2 text-sm text-gray-700 bg-gray-100 py-1 w-[100px] rounded-md shadow-sm text-center">
-                Downloadable Resume <CloudArrowDown size={12} className="inline ml-1"  weight="bold"/>
-       
-              </span>
-            </div>
+            <a href="/Lasitha_PM_Resume.pdf" download>
+              <div className="absolute top-40 left-[30%] flex flex-col items-center">
+                <Image
+                  src="/textfile.png"
+                  alt="Image 1"
+                  width={100}
+                  height={100}
+                  className=""
+                />
+                <span className="mt-2 text-sm text-gray-700 bg-gray-100 py-1 w-[100px] rounded-md shadow-sm text-center">
+                  Downloadable Resume{" "}
+                  <CloudArrowDown
+                    size={12}
+                    className="inline ml-1"
+                    weight="bold"
+                  />
+                </span>
+              </div>
+            </a>
             <div
               className="absolute bottom-10 left-[18%] flex flex-col items-center"
               onClick={() => {
