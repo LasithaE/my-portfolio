@@ -82,7 +82,7 @@ export function TopBar() {
 
         {/* Connect Button (Always visible) */}
         <a
-          href="mailto:lasithaeaswaran@gmail.com"
+          href="https://x.com/lasitha_e"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -162,7 +162,7 @@ export function TopBar() {
                 </Link>
               </button>
               <a
-                href="mailto:lasithaeaswaran@gmail.com"
+                href="https://x.com/lasitha_e"
                 target="_blank"
                 rel="noopener noreferrer"
               >

@@ -13,7 +13,9 @@ const sectionVariants = {
 export default function About() {
   return (
     <div className="mt-6 flex justify-center flex-col items-center">
-    <div className="font-jost text-[36px] font-semibold text-gray-800 italic">Get to know me more!</div>
+      <div className="font-jost text-[36px] font-semibold text-gray-800 italic">
+        Get to know me more!
+      </div>
       <div className="mx-40 p-6 font-jost text-[22px] text-[#424141]">
         <motion.p
           initial="hidden"
@@ -179,7 +181,15 @@ export default function About() {
             trying to balance work, life, hobbies, and a million ideas{" "}
           </strong>{" "}
           all at once. If you relate or are in need for food/travel reccos in
-          📍Bangalore, let’s connect! 💬
+          📍Bangalore,{" "}
+          <a
+            href="https://x.com/lasitha_e"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {" "}
+            <span className="border-b border-dashed border-gray-600">let’s connect! 💬.</span>
+          </a>
         </motion.p>
       </div>
     </div>
