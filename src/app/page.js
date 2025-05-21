@@ -24,7 +24,7 @@ export default function Home() {
             width={300}
             height={300}
             className="absolute left-[-30%] opacity-0 scale-75 rotate-[-10deg] transition-all duration-500 ease-in-out 
-         group-hover:opacity-100 group-hover:scale-100 group-hover:left-[0px] group-hover:rotate-[-10deg] rounded-[10%]"
+       group-hover:opacity-100 group-hover:scale-100 group-hover:left-[0px] xl:group-hover:left-[15%] group-hover:rotate-[-10deg] rounded-[10%]"
           />
 
           {/* Second Image - Right */}
@@ -34,17 +34,8 @@ export default function Home() {
             width={300}
             height={300}
             className="absolute right-[-30%] opacity-0 scale-75 rotate-[10deg] transition-all duration-500 ease-in-out 
-         group-hover:opacity-100 group-hover:scale-100 group-hover:right-[0px] group-hover:rotate-[10deg] rounded-[10%]"
+       group-hover:opacity-100 group-hover:scale-100 group-hover:right-[0px] xl:group-hover:right-[15%] group-hover:rotate-[10deg] rounded-[10%]"
           />
-
-          {/* Corner Image */}
-          {/* <Image
-    src="/corner.png"
-    alt="Corner Image"
-    width={100}
-    height={100}
-    className="absolute opacity-0 md:opacity-100 -top-8 group-hover:opacity-0 left-42 z-20 rounded-tl-[10%] transition-all duration-500 ease-in-out group-hover:scale-110"
-  /> */}
 
           {/* Main Image */}
           <Image
@@ -55,6 +46,7 @@ export default function Home() {
             className="relative z-10 rounded-[10%] transition-all duration-500 ease-in-out group-hover:scale-110"
           />
         </div>
+
         {/* Typing Effect */}
         <div className="relative flex justify-center items-center w-full md:w-[900px] h-[50px] text-center mt-10 md:mt-25 md:mb-5">
           <TypingEffect />

@@ -2,20 +2,21 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import TranslucentModal from "../../components/TranslucentModal";
-import { resume } from "@/data/resume";
+import { dev_tools, resume } from "@/data/resume";
 import { motion } from "framer-motion";
 import { CloudArrowDown } from "@phosphor-icons/react";
 import ResumeCard from "@/components/ResumeCard";
 import { dev_projects } from "@/data/dev_projects";
 import DevProjectCard from "@/components/DevProjectCard";
-import { prod_work_exp } from "@/data/prod_work_exp";
+import { prod_work_exp, product_tools } from "@/data/prod_work_exp";
 import CaseStudies from "@/components/CaseStudies";
 
 const Work = () => {
   const [openWorkModal, setOpenWorkModal] = useState();
+
   return (
     <>
-      <div className="my-8 md:mx-30">
+      <div className="my-8 md:mx-30 xl:mx-80">
         <div className="p-5 md:px-0 text-center">
           Over the past few years, I’ve{" "}
           <strong>built user-facing products</strong> at{" "}
@@ -231,19 +232,51 @@ const Work = () => {
           <TranslucentModal
             isOpen={true}
             onClose={() => setOpenWorkModal("")}
-            title={"Dev Work Experience"}
-            children={resume.map((item, index) => (
-              <motion.div
-                key={item.company + index}
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="relative z-10 flex justify-start mb-5"
-              >
-                <ResumeCard item={item} />
-              </motion.div>
-            ))}
+            title={"Developer Tools"}
+            children={
+              <div>
+                <div className="overflow-hidden w-full py-6">
+                  <motion.div
+                    className="flex gap-8 w-max"
+                    animate={{ x: ["0%", "-50%"] }} // slide to left
+                    transition={{
+                      duration: 15, // control speed here
+                      ease: "linear",
+                      repeat: Infinity,
+                    }}
+                  >
+                    {[...dev_tools, ...dev_tools].map((item, index) => (
+                      <div
+                        key={index}
+                        className="min-w-[50px] flex flex-col h-[50px] flex items-center justify-center rounded"
+                      >
+                        <Image width={40} height={40} src={item.icon}></Image>
+                        <div className="text-black text-[11px]">
+                          {item.label}
+                        </div>
+                      </div>
+                    ))}
+                  </motion.div>
+                </div>
+                <div>
+                  <div className="font-bold left-10 pb-5 text-[24px]">
+                    Developer Work Experience
+                  </div>
+                  {resume.map((item, index) => (
+                    <motion.div
+                      key={item.company + index}
+                      initial={{ opacity: 0, y: 50 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.5, delay: index * 0.1 }}
+                      className="relative z-10 flex justify-start mb-5"
+                    >
+                      <ResumeCard item={item} />
+                    </motion.div>
+                  ))}
+                </div>
+              </div>
+            }
           />
         ) : openWorkModal === "dev_projects" ? (
           <TranslucentModal
@@ -266,15 +299,47 @@ const Work = () => {
         ) : openWorkModal === "prod_work_exp" ? (
           <TranslucentModal
             isOpen={true}
-            title={"Product Work Experience"}
+            title={"Product Tools"}
             onClose={() => setOpenWorkModal("")}
-            children={prod_work_exp.map((item, index) => (
-              <li
-                key={index}
-                dangerouslySetInnerHTML={{ __html: item }}
-                className="mb-3"
-              />
-            ))}
+            children={
+              <div>
+                <div className="overflow-hidden w-full py-6">
+                  <motion.div
+                    className="flex gap-8 w-max"
+                    animate={{ x: ["0%", "-50%"] }} // slide to left
+                    transition={{
+                      duration: 15, // control speed here
+                      ease: "linear",
+                      repeat: Infinity,
+                    }}
+                  >
+                    {[...product_tools, ...product_tools].map((item, index) => (
+                      <div
+                        key={index}
+                        className="min-w-[50px] flex flex-col h-[50px] flex items-center justify-center rounded"
+                      >
+                        <Image width={40} height={40} src={item.icon}></Image>
+                        <div className="text-black text-[11px]">
+                          {item.label}
+                        </div>
+                      </div>
+                    ))}
+                  </motion.div>
+                </div>
+                <div>
+                  <div className="font-bold left-10 pb-5 text-[24px]">
+                    Product Work Experience
+                  </div>
+                  {prod_work_exp.map((item, index) => (
+                    <li
+                      key={index}
+                      dangerouslySetInnerHTML={{ __html: item }}
+                      className="mb-3"
+                    />
+                  ))}
+                </div>
+              </div>
+            }
           />
         ) : openWorkModal === "prod_case_studies" ? (
           <TranslucentModal

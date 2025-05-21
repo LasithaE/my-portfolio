@@ -1,5 +1,5 @@
 import { EB_Garamond, Fleur_De_Leah, Jost, Inter_Tight, Pixelify_Sans } from "next/font/google";
-import "./globals.css";
+import "@/app/globals.css";
 import { TopBar } from "@/components/TopBar";
 
 
