@@ -23,7 +23,7 @@ export const resume = [
   //   ],
   // },
   {
-    icon: "/inheaden_logo.jpeg",
+    icon: "/inheaden_logo.png",
     company: "Inheaden",
     location: "Bangalore, India",
     title: "Software Developer & Project Manager",
@@ -36,7 +36,7 @@ export const resume = [
     ],
   },
   {
-    icon: "/lummo_logo.jpeg",
+    icon: "/lummo_logo.png",
     company: "Lummo",
     location: "Remote",
     title: "Software Development Engineer – L1 ",
@@ -51,7 +51,7 @@ export const resume = [
     ],
   },
   {
-    icon: "/superhire_logo.jpeg",
+    icon: "/superhire_logo.png",
     company: "SuperHire",
     location: "Remote",
     title: "Product Engineering Intern",
