@@ -1,5 +1,14 @@
+export const dev_tools = [
+  { icon: "/nextjs.svg", label: "Next JS" },
+  { icon: "/tailwind.svg", label: "Tailwind CSS" },
+  { icon: "/vscode.svg", label: "VS Code" },
+  { icon: "/react.svg", label: "React" },
+  { icon: "/html.svg", label: "HTML" },
+  { icon: "/python.svg", label: "Python" },
+  { icon: "/css.svg", label: "CSS" },
+  { icon: "/figma.svg", label: "Figma" },
+];
 export const resume = [
-
   // {
   //   icon: "/airtribe.jpg",
   //   company: "Airtribe Product Management Course",
