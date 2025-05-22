@@ -24,17 +24,16 @@ export default function Home() {
             width={300}
             height={300}
             className="absolute left-[-30%] opacity-0 scale-75 rotate-[-10deg] transition-all duration-500 ease-in-out 
-       group-hover:opacity-100 group-hover:scale-100 group-hover:left-[0px] xl:group-hover:left-[15%] group-hover:rotate-[-10deg] rounded-[10%]"
+  group-hover:opacity-100 group-hover:scale-100 group-hover:left-[20%] xl:group-hover:left-[5%] 2xl:group-hover:left-[15%] group-hover:rotate-[-10deg] rounded-[10%]"
           />
 
-          {/* Second Image - Right */}
           <Image
             src="/cute.png"
             alt="Landing Page Photo"
             width={300}
             height={300}
             className="absolute right-[-30%] opacity-0 scale-75 rotate-[10deg] transition-all duration-500 ease-in-out 
-       group-hover:opacity-100 group-hover:scale-100 group-hover:right-[0px] xl:group-hover:right-[15%] group-hover:rotate-[10deg] rounded-[10%]"
+  group-hover:opacity-100 group-hover:scale-100 group-hover:right-[20%] xl:group-hover:right-[5%] 2xl:group-hover:right-[15%] group-hover:rotate-[10deg] rounded-[10%]"
           />
 
           {/* Main Image */}
