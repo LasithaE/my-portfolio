@@ -166,7 +166,7 @@ export default function Home() {
           </p>
           <span className="flex items-center mx-2 p-1 border-[0.5] border-gray-800/10 shadow-md hover:scale-110 hover:rotate-[5deg] rounded-md bg-white backdrop-blur-md">
             <Image
-              src="/dwight.png"
+              src="/michael.png"
               alt="Landing Page Photo"
               width={70}
               height={70}
