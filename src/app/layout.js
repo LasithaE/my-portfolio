@@ -1,4 +1,4 @@
-import { EB_Garamond, Fleur_De_Leah, Jost, Inter_Tight, Pixelify_Sans } from "next/font/google";
+import { EB_Garamond, Fleur_De_Leah, Jost, Inter_Tight, Pixelify_Sans, Instrument_Serif } from "next/font/google";
 import "@/app/globals.css";
 import { TopBar } from "@/components/TopBar";
 
@@ -22,6 +22,11 @@ const inter = Inter_Tight({
 const jost = Jost({ variable: "--font-jost", subsets: ["latin"] });
 const EBGaramond = EB_Garamond({
   variable: "--font-eb-garamond",
+  weight: "400",
+  subsets: ["latin"],
+});
+const instrument = Instrument_Serif({
+  variable: "--font-instrument",
   weight: "400",
   subsets: ["latin"],
 });
