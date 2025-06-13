@@ -15,6 +15,7 @@ import TypingEffect from "@/components/TypingEffect";
 export default function Home() {
   return (
 <div className="w-full px-4">
+
 <div className="w-full max-w-[92vw] md:max-w-screen-md mx-auto flex flex-col items-center justify-center">
 <div className="flex flex-col items-center justify-center w-full max-w-[92vw] md:max-w-screen-md mx-auto mt-5 md:mt-20">
         <div className="relative flex justify-center items-center w-full group">
