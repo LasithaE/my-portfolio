@@ -1,12 +1,12 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
 
-const WavyUnderline = ({ text, clicked }) => {
+const WavyUnderline = ({ text, selected, textClassName }) => {
 
   return (
     <div className="relative inline-block">
-      <span className="text-xl font-semibold">{text}</span>
-      {clicked === text && (
+      <span className={`text-xl font-semibold ${textClassName}`}>{text}</span>
+      {selected === text && (
         <motion.div
           className="absolute left-0 bottom-0 w-full h-1"
           initial={{ pathLength: 0 }}

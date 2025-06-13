@@ -39,10 +39,12 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${fleurDeLeah.variable} ${jost.variable} ${EBGaramond.variable} ${inter.variable} antialiased polka-dot`}
+        className={`${fleurDeLeah.variable} ${jost.variable} ${EBGaramond.variable} ${inter.variable} antialiased polka-dot overflow-x-hidden`}
         cz-shortcut-listen="true"
       >
-       <> <TopBar />
+       <> <div className="sticky top-0 z-50 bg-white pb-3 md:bg-transparent md:static">
+  <TopBar />
+</div>
        {children}</>
       </body>
     </html>

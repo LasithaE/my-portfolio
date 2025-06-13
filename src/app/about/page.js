@@ -12,37 +12,24 @@ const sectionVariants = {
 
 export default function About() {
   return (
-    <div className="mt-6 flex justify-center flex-col items-center">
-      <div className="font-jost text-[36px] font-semibold text-gray-800 italic">
+<div className="w-full max-w-[92vw] md:max-w-screen-md mx-auto flex flex-col items-center justify-center">
+      <div className="font-jost text-[22px] mt-10 md:text-[30px] font-semibold text-gray-800 italic">
         Get to know me more!
       </div>
-      <div className="mx-10 md:mx-40 p-6 font-jost text-[22px] text-[#424141]">
+      <div className="mx-10 p-6 font-jost text-[22px] text-[#424141]">
         <motion.p
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
           variants={sectionVariants}
-          className="text-center"
+          className="text-center text-[16px] md:text-[20px]"
         >
-          Hey there! I&apos;m a{" "}
-          <strong>developer-turned-prompt-engineer</strong> (or at least
-          that&lsquo;s what my job feels like now). Three years of coding later,
-          AI came along and changed everything. Now, I find myself questioning
-          my purpose as my front-end dev job slowly morphs into just… writing
-          prompts.
-        </motion.p>
-        <motion.p
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={sectionVariants}
-          className="text-center"
-        >
-          But beyond that existential crisis, I realized something—while I love
-          building things, I{" "}
-          <strong>miss using my soft skills & managerial side</strong>. That’s
-          why I’m on my{" "}
-          <strong>journey to switch into Product Management.</strong> 🚀
+          Hey there! I’m a <strong>developer-turned-prompt-wrangler</strong> —
+          thanks to AI, my front-end job now feels like 80% writing prompts. But
+          truth is, I’ve always loved <strong>building things</strong>, and
+          lately, I’ve been craving more of the{" "}
+          <strong>people + product side</strong>. So now, I’m on a mission to{" "}
+          <strong>transition into Product Management</strong>. 🚀
         </motion.p>
         <motion.div
           initial="hidden"
@@ -71,7 +58,7 @@ export default function About() {
           whileInView="visible"
           viewport={{ once: true }}
           variants={sectionVariants}
-          className="text-center"
+          className="text-center text-[16px] md:text-[20px]"
         >
           When I’m <strong>not coding or writing case studies</strong>, you’ll
           probably find me:
@@ -81,10 +68,10 @@ export default function About() {
           whileInView="visible"
           viewport={{ once: true }}
           variants={sectionVariants}
-          className="text-center"
+          className="text-center text-[16px] md:text-[20px]"
         >
           Reading, cooking aka playing MasterChef in my kitchen, Finding new
-          places to eat in Bangalore or Debating between beaches & mountains
+          places to eat in Bangalore or debating between beaches & mountains
           (but secretly leaning towards beaches)
         </motion.p>
         <motion.div
@@ -128,7 +115,7 @@ export default function About() {
           whileInView="visible"
           viewport={{ once: true }}
           variants={sectionVariants}
-          className="text-center"
+          className="text-center text-[16px] md:text-[20px]"
         >
           On weekends, I’m either <strong>visiting my parents in Kochi</strong>,
           <strong>chilling at Cubbon</strong>,{" "}
@@ -173,7 +160,7 @@ export default function About() {
           whileInView="visible"
           viewport={{ once: true }}
           variants={sectionVariants}
-          className="text-center mb-30"
+          className="text-center mb-30 text-[16px] md:text-[20px]"
         >
           So yeah, this is me—
           <strong>

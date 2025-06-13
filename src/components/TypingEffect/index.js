@@ -2,7 +2,7 @@ import { Typewriter } from 'react-simple-typewriter';
 
 const TypingEffect = () => {
   return (
-    <div className="text-[36px] md:text-[42px] ml-3 mb-2 font-instrument cursor-default">
+    <div className="text-[28px] md:text-[36px] ml-3 mb-2 font-instrument cursor-default">
     
       <span className="font-semibold text-black">
         <Typewriter

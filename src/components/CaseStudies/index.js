@@ -1,50 +1,84 @@
-import React from "react";
-import { BookOpenText } from "@phosphor-icons/react";
+import React, { useState } from "react";
+import { ArrowUpRight } from "@phosphor-icons/react";
+import { caseStudies } from "@/data/casestudies";
+import WavyUnderline from "@/components/WavyUnderline"; 
 
-const CaseStudyCard = ({ title, description, image, link }) => {
+const CaseStudyCard = ({ title, link }) => {
   return (
-    <a
-      href={link}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="block max-w-md mx-auto"
-    >
-      <div className="rounded-2xl shadow-md overflow-hidden bg-white text-center">
-        {image ? (
-          <div className="w-full flex justify-center py-6 px-4">
-            <img
-              src={image}
-              alt={title}
-              className="w-[100%] h-28 object-cover shadow-md rounded-2xl"
-            />
-          </div>
-        ) : null}
-        <div className="p-6 pt-4">
-          <h2 className="text-lg font-semibold">{title}</h2>
-          <p className="text-sm text-gray-700 mt-2 line-clamp-3">
-            {description}
-          </p>
+  //   <a
+  //     href={link}
+  //     target="_blank"
+  //     rel="noopener noreferrer"
+  // className="flex justify-between items-center w-[92vw] md:w-[736px] bg-white shadow-md rounded-lg px-4 py-3 hover:shadow-lg hover:border-2 hover:border-[#FF5555] transition"
+  //   >
+  //     <span className="text-sm md:text-base font-medium text-gray-800 flex-1 truncate mr-7">
+  //       {title}
+  //     </span>
+  //     <ArrowUpRight size={16} weight="bold" className="text-gray-500 flex-shrink-0" />
+  //   </a>
+  <a
+  href={link}
+  target="_blank"
+  rel="noopener noreferrer"
+  className="group w-full rounded-xl px-4 py-3 bg-white shadow-md hover:shadow-lg transition flex justify-between items-center text-left border border-gray-200"
+>
+  <span className="text-sm font-medium text-gray-800 group-hover:text-black line-clamp-2">
+    {title}
+  </span>
 
-          <div className="mt-6">
-            <button className="flex items-center gap-2 mx-auto text-orange-600 border border-orange-300 hover:bg-orange-50 transition px-4 py-2 rounded-full text-sm font-medium">
-              <BookOpenText className="w-4 h-4" />
-              Read on Substack
-            </button>
-          </div>
-        </div>
-      </div>
-    </a>
+  <ArrowUpRight
+    size={18}
+    className="text-gray-400 group-hover:text-gray-700 flex-shrink-0 ml-2"
+  />
+</a>
+
   );
 };
 
-import { caseStudies } from "@/data/casestudies";
+export default function CaseStudies({selected, setSelected}) {
+  const [selectedTag, setSelectedTag] = useState(null);
+  const allTags = Array.from(
+    new Set(caseStudies.flatMap((cs) => cs.tags))
+  );
 
-export default function CaseStudies() {
+  const filteredCaseStudies = selectedTag
+    ? caseStudies.filter((cs) => cs.tags.includes(selectedTag))
+    : caseStudies;
+
   return (
-    <div className="grid gap-6 px-4 py-4">
-      {caseStudies.map((item, index) => (
-        <CaseStudyCard key={index} {...item} />
-      ))}
+    <div className="space-y-6"><div
+    onMouseEnter={() => setSelected("Product Articles")}
+    onMouseLeave={() => setSelected(null)} 
+  >
+    <WavyUnderline
+      text={"Product Articles"}
+      selected={selected}
+    />
+  </div>
+
+      {/* Tag Filter */}
+      <div className="flex flex-wrap gap-2">
+        {allTags.map((tag) => (
+          <button
+            key={tag}
+            onClick={() => setSelectedTag(tag === selectedTag ? null : tag)}
+            className={`px-3 py-1.5 rounded-full text-sm border transition ${
+              selectedTag === tag
+                ? "text-black border-[#FF5555] border-2"
+                : "bg-white text-gray-700 border-gray-300 hover:border-2 hover:border-[#FF5555] hover:bg-gray-100"
+            }`}
+          >
+            {tag}
+          </button>
+        ))}
+      </div>
+
+      {/* Case Study List */}
+      <div className="space-y-3">
+        {filteredCaseStudies.map((item, index) => (
+          <CaseStudyCard key={index} title={item.title} link={item.link} />
+        ))}
+      </div>
     </div>
   );
 }
