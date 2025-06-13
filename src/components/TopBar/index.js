@@ -4,12 +4,19 @@ import Image from "next/image";
 import Link from "next/link";
 import "../../app/globals.css";
 import { usePathname } from "next/navigation";
-import { Star, X, List } from "@phosphor-icons/react";
+import {
+  Star,
+  X,
+  List,
+  DownloadSimple,
+  ChatTeardropText,
+} from "@phosphor-icons/react";
 import WavyUnderline from "../WavyUnderline";
 
 export function TopBar() {
   const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
+  const isWorkPage = pathname === "/work";
   const [clicked, setClicked] = useState(() => {
     switch (pathname) {
       case "/work":
@@ -22,6 +29,16 @@ export function TopBar() {
         return "Home";
     }
   });
+  const [scrolledDown, setScrolledDown] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolledDown(window.scrollY > 10);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   useEffect(() => {
     switch (pathname) {
       case "/work":
@@ -37,71 +54,98 @@ export function TopBar() {
         setClicked("Home");
     }
   }, [pathname]);
+
   return (
     <div className="relative">
       {/* Navbar */}
-      <div className="flex items-center justify-between h-16 w-full px-6 md:mt-5">
+      <div className="flex items-center justify-between h-16 w-full md:max-w-screen-md mx-auto px-6 md:mt-5">
         {/* Logo */}
-        <Image
-          src="/sign_black_and_red.png"
-          alt="Sign Icon"
-          width={120}
-          height={50}
-          className="h-15 mt-4"
-        />
-
-        {/* Desktop Nav (Hidden on mobile) */}
-        <div className="hidden md:flex justify-center items-center gap-6 flex-grow mt-4">
-          <button
-            className="mx-2 cursor-pointer"
-            onClick={() => setClicked("Home")}
-          >
-            <Link href="/">
-              <WavyUnderline text={"Home"} hovered={null} clicked={clicked} />
-            </Link>
-          </button>
-          <Star size={14} weight={"fill"} />
-          <button
-            className="mx-2 cursor-pointer"
-            onClick={() => setClicked("Work")}
-          >
-            <Link href="/work">
-              <WavyUnderline text={"Work"} hovered={null} clicked={clicked} />
-            </Link>
-          </button>
-          <Star size={14} weight={"fill"} />
-          <button
-            className="mx-2 cursor-pointer"
-            onClick={() => setClicked("About")}
-          >
-            <Link href="/about">
-              <WavyUnderline text={"About"} hovered={null} clicked={clicked} />
-            </Link>
-          </button>
+        <div className="flex-shrink-0 mt-4">
+          <Image
+            src="/sign_black_and_red.png"
+            alt="Sign Icon"
+            width={120}
+            height={50}
+          />
         </div>
 
-        {/* Connect Button (Always visible) */}
-        <a
-          href="https://x.com/lasitha_e"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          {" "}
-          <button
-            className="px-4 py-2 text-white bg-gray-800 border border-gray-800 rounded-lg shadow-md transition shadow-2xl 
-      hover:bg-white hover:text-gray-800 hover:scale-105 cursor-pointer
-      active:bg-white active:text-gray-800 active:scale-105 hidden md:block"
+        {/* Desktop Nav (Centered) */}
+        <div className="hidden md:flex items-center justify-center gap-6 flex-1 mt-4">
+          <Link href="/">
+            <button onClick={() => setClicked("Home")}>
+              <WavyUnderline text={"Home"} selected={clicked} />
+            </button>
+          </Link>
+          <Star size={14} weight={"fill"} />
+          <Link href="/work">
+            <button onClick={() => setClicked("Work")}>
+              <WavyUnderline text={"Work"} selected={clicked} />
+            </button>
+          </Link>
+          <Star size={14} weight={"fill"} />
+          <Link href="/about">
+            <button onClick={() => setClicked("About")}>
+              <WavyUnderline text={"About"} selected={clicked} />
+            </button>
+          </Link>
+        </div>
+
+        {/* Desktop Action Buttons (Right aligned) */}
+        <div className="hidden md:flex gap-3 items-center mt-4">
+          <a
+            href="https://x.com/lasitha_e"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group flex items-center h-10 bg-gray-800 text-white pl-2 pr-0 hover:pr-3 rounded-full transition-all duration-200"
           >
-            Let’s connect
-          </button>
-        </a>
-        {/* Hamburger Icon for Mobile */}
-        <button
-          className="md:hidden text-gray-800"
-          onClick={() => setMenuOpen(!menuOpen)}
-        >
-          {menuOpen ? <div /> : <List size={28} />}
-        </button>
+            <span className="w-6 h-6 flex items-center justify-center">
+              <ChatTeardropText size={20} />
+            </span>
+            <span className="ml-2 overflow-hidden max-w-0 opacity-0 group-hover:max-w-[160px] group-hover:opacity-100 transition-all duration-300 text-sm whitespace-nowrap">
+              Connect with me
+            </span>
+          </a>
+
+          <a
+            href="/resume.pdf"
+            download
+            className="group flex items-center h-10 bg-gray-800 text-white pl-2 pr-0 hover:pr-3 rounded-full transition-all duration-200"
+          >
+            <span className="w-6 h-6 flex items-center justify-center">
+              <DownloadSimple size={20} />
+            </span>
+            <span className="ml-2 overflow-hidden max-w-0 opacity-0 group-hover:max-w-[200px] group-hover:opacity-100 transition-all duration-300 text-sm whitespace-nowrap">
+              Download my resume
+            </span>
+          </a>
+        </div>
+
+        {/* Mobile: Scroll-dependent action buttons */}
+        <div className="md:hidden flex items-center gap-2 text-gray-800 mt-4">
+          {scrolledDown ? (
+            <>
+              <a
+                href="https://x.com/lasitha_e"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-gray-900 text-white p-2 rounded-full"
+              >
+                <ChatTeardropText size={16} />
+              </a>
+              <a
+                href="/resume.pdf"
+                download
+                className="bg-gray-900 text-white p-2 rounded-full"
+              >
+                <DownloadSimple size={16} />
+              </a>
+            </>
+          ) : (
+            <button onClick={() => setMenuOpen(!menuOpen)}>
+              <List size={28} />
+            </button>
+          )}
+        </div>
       </div>
 
       {/* Mobile Menu Overlay */}
@@ -117,18 +161,14 @@ export function TopBar() {
 
             <nav className="flex flex-col gap-6 text-xl mt-6">
               <button
-                className="cursor-pointer"
+                className="cursor-default"
                 onClick={() => {
                   setClicked("Home");
                   setMenuOpen(false);
                 }}
               >
                 <Link href="/">
-                  <WavyUnderline
-                    text={"Home"}
-                    hovered={null}
-                    clicked={clicked}
-                  />
+                  <WavyUnderline text={"Home"} selected={clicked} />
                 </Link>
               </button>
               <button
@@ -139,11 +179,7 @@ export function TopBar() {
                 }}
               >
                 <Link href="/work">
-                  <WavyUnderline
-                    text={"Work"}
-                    hovered={null}
-                    clicked={clicked}
-                  />
+                  <WavyUnderline text={"Work"} selected={clicked} />
                 </Link>
               </button>
               <button
@@ -154,27 +190,35 @@ export function TopBar() {
                 }}
               >
                 <Link href="/about">
-                  <WavyUnderline
-                    text={"About"}
-                    hovered={null}
-                    clicked={clicked}
-                  />
+                  <WavyUnderline text={"About"} selected={clicked} />
                 </Link>
               </button>
-              <a
-                href="https://x.com/lasitha_e"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                {" "}
+              {/* {isWorkPage ? (
                 <button
                   className="px-4 py-2 mt-4 text-white bg-gray-800 border border-gray-800 rounded-lg shadow-md 
-            hover:bg-white hover:text-gray-800 hover:scale-105 transition cursor-pointer"
-                  onClick={() => setMenuOpen(false)}
+      hover:bg-white hover:text-gray-800 hover:scale-105 transition cursor-pointer"
+                  onClick={() => {
+                    setMenuOpen(false);
+                    window.open("/resume.pdf", "_blank");
+                  }}
                 >
-                  Let’s connect
+                  Download My Resume
                 </button>
-              </a>
+              ) : (
+                <a
+                  href="https://x.com/lasitha_e"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <button
+                    className="px-4 py-2 mt-4 text-white bg-gray-800 border border-gray-800 rounded-lg shadow-md 
+        hover:bg-white hover:text-gray-800 hover:scale-105 transition cursor-pointer"
+                    onClick={() => setMenuOpen(false)}
+                  >
+                    Let’s connect
+                  </button>
+                </a>
+              )} */}
             </nav>
           </div>
         </div>

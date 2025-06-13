@@ -2,7 +2,9 @@ module.exports = {
     content: ['./src/**/*.{js,ts,jsx,tsx,html}'],
     safelist: ['scrollbar-hide'],
     theme: {
-      extend: {
+      extend: { maxWidth: {
+        'content-wrapper': '92vw',
+      },
         keyframes: {
           marquee: {
             '0%': { transform: 'translateX(0)' },

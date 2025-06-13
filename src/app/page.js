@@ -14,9 +14,10 @@ import TypingEffect from "@/components/TypingEffect";
 
 export default function Home() {
   return (
-    <>
-      <div className="flex flex-col items-center justify-center w-full mt-5 md:mt-20">
-        <div className="relative flex justify-center items-center w-full md:w-1/2 group">
+<div className="w-full px-4">
+<div className="w-full max-w-[92vw] md:max-w-screen-md mx-auto flex flex-col items-center justify-center">
+<div className="flex flex-col items-center justify-center w-full max-w-[92vw] md:max-w-screen-md mx-auto mt-5 md:mt-20">
+        <div className="relative flex justify-center items-center w-full group">
           {/* First Image - Left */}
           <Image
             src="/monitor.png"
@@ -51,110 +52,111 @@ export default function Home() {
           <TypingEffect />
         </div>
       </div>
+      <div className="w-full px-4">
+        <div className="w-full max-w-[92vw] md:max-w-screen-md mx-auto text-[22px] ml-2 font-jost cursor-default text-[#424141] flex flex-col items-center max-w-content-wrapper justify-center mt-10 md:mt-5 px-4">
+          <div className="text-[22px] md:text-[26px] font-semibold mb-4 italic text-center">
+            Frontend dev by day, aspiring product manager by ambition.
+            <br />
+          </div>
 
-      <div className="text-[22px] ml-2 font-jost cursor-default text-[#424141] flex flex-col items-center justify-center mx-auto mt-10 md:mt-5 px-4">
-        <div className="text-[26px] font-semibold mb-4 italic text-center">
-          Frontend dev by day, aspiring product manager by ambition.
-          <br />
-        </div>
+          {/* Text Block 1 */}
+          <div className="flex flex-wrap justify-center items-center mb-3 text-[18px] md:text-[20px] text-center">
+            <p className="w-full sm:w-auto">
+              I’ve worked in <strong className="ml-1">four startups</strong>,
+              picking up lessons and debugging nightmares here
+            </p>
+            <span className="flex items-center mx-2 p-1 border-1 border-gray-800/10 shadow-md text-[18px] md:text-[20px] hover:scale-110 hover:rotate-[5deg] rounded-md bg-white backdrop-blur-md">
+              <Image
+                src="/setup.png"
+                alt="Landing Page Photo"
+                width={50}
+                height={50}
+                className="rounded-md"
+              />
+            </span>
+            <p> along the way.</p>
+          </div>
 
-        {/* Text Block 1 */}
-        <div className="flex flex-wrap justify-center items-center mb-3 text-center">
-          <p className="w-full sm:w-auto">
-            I’ve worked in <strong className="ml-2">four startups</strong>,
-            picking up lessons and debugging nightmares here
-          </p>
-          <span className="flex items-center mx-2 p-1 border-1 border-gray-800/10 shadow-md hover:scale-110 hover:rotate-[5deg] rounded-md bg-white backdrop-blur-md">
-            <Image
-              src="/setup.png"
-              alt="Landing Page Photo"
-              width={50}
-              height={50}
-              className="rounded-md"
-            />
-          </span>
-          <p> along the way.</p>
-        </div>
+          {/* Text Block 2 */}
+          <div className="flex flex-wrap justify-center text-[18px] md:text-[20px] items-center mb-3 text-center">
+            <p className="w-full sm:w-auto ">
+              I believe that<strong className="ml-2">filter coffee</strong>
+            </p>
+            <span className="flex items-center mx-2 p-1 border-1 border-gray-800/10 shadow-md hover:scale-110 hover:rotate-[5deg] rounded-md bg-white backdrop-blur-md">
+              <Image
+                src="/coffee.png"
+                alt="Landing Page Photo"
+                width={50}
+                height={50}
+                className="rounded-md"
+              />
+            </span>
+            <p> can fix literally anything/anyone.</p>
+          </div>
 
-        {/* Text Block 2 */}
-        <div className="flex flex-wrap justify-center items-center mb-3 text-center">
-          <p className="w-full sm:w-auto">
-            I believe that<strong className="ml-2">filter coffee</strong>
-          </p>
-          <span className="flex items-center mx-2 p-1 border-1 border-gray-800/10 shadow-md hover:scale-110 hover:rotate-[5deg] rounded-md bg-white backdrop-blur-md">
-            <Image
-              src="/coffee.png"
-              alt="Landing Page Photo"
-              width={50}
-              height={50}
-              className="rounded-md"
-            />
-          </span>
-          <p> can fix literally anything/anyone.</p>
-        </div>
+          {/* Text Block 3 */}
+          <div className="flex flex-wrap justify-center text-[18px] md:text-[20px] items-center mb-3 text-center">
+            <p className="w-full sm:w-auto">
+              Born a <strong className="ml-2">Malayali</strong>
+            </p>
+            <span className="flex w-[52px] mr-2 h-[52px] items-center ml-2 p-1 border-1 border-gray-800/10 shadow-md hover:scale-110 hover:rotate-[5deg] rounded-md bg-white backdrop-blur-md">
+              <Image
+                src="/sadhya.png"
+                alt="Landing Page Photo"
+                width={45}
+                height={45}
+                className="rounded-md"
+              />
+            </span>
+            <p>
+              {" "}
+              in Mumbai, now in <strong className="ml-2">Bangalore</strong>
+            </p>
+            <span className="flex items-center mx-2 p-1 border-1 border-gray-800/10 shadow-md hover:scale-110 hover:rotate-[5deg] rounded-md bg-white backdrop-blur-md">
+              <Image
+                src="/blr.png"
+                alt="Landing Page Photo"
+                width={50}
+                height={50}
+                className="rounded-md"
+              />
+            </span>
+            <p>
+              —where I build slick interfaces, make home films, and break down
+              what makes a product tick.
+            </p>
+          </div>
 
-        {/* Text Block 3 */}
-        <div className="flex flex-wrap justify-center items-center mb-3 text-center">
-          <p className="w-full sm:w-auto">
-            Born a <strong className="ml-2">Malayali</strong>
-          </p>
-          <span className="flex w-[52px] mr-2 h-[52px] items-center ml-2 p-1 border-1 border-gray-800/10 shadow-md hover:scale-110 hover:rotate-[5deg] rounded-md bg-white backdrop-blur-md">
-            <Image
-              src="/sadhya.png"
-              alt="Landing Page Photo"
-              width={45}
-              height={45}
-              className="rounded-md"
-            />
-          </span>
-          <p>
-            {" "}
-            in Mumbai, now in <strong className="ml-2">Bangalore</strong>
-          </p>
-          <span className="flex items-center mx-2 p-1 border-1 border-gray-800/10 shadow-md hover:scale-110 hover:rotate-[5deg] rounded-md bg-white backdrop-blur-md">
-            <Image
-              src="/blr.png"
-              alt="Landing Page Photo"
-              width={50}
-              height={50}
-              className="rounded-md"
-            />
-          </span>
-          <p>
-            —where I build slick interfaces, make home films, and break down
-            what makes a product tick.
-          </p>
-        </div>
-
-        {/* Text Block 4 */}
-        <div className="flex flex-wrap justify-center items-center mb-3 text-center">
-          <p className="w-full sm:w-auto">
-            When I’m not coding, I’m in the{" "}
-            <strong className="ml-2">kitchen experimenting</strong>
-          </p>
-          <span className="flex items-center mx-2 p-1 border-1 border-gray-800/10 shadow-md hover:scale-110 hover:rotate-[5deg] rounded-md bg-white backdrop-blur-md">
-            <Image
-              src="/homefood.png"
-              alt="Landing Page Photo"
-              width={50}
-              height={50}
-              className="rounded-md"
-            />
-          </span>
-          <p>
-            {" "}
-            or hunting for{" "}
-            <strong className="ml-2">Bangalore’s next food gem.</strong>
-          </p>
-          <span className="flex items-center mx-2 p-1 border-1 border-gray-800/10 shadow-md hover:scale-110 hover:rotate-[5deg] rounded-md bg-white backdrop-blur-md">
-            <Image
-              src="/waffle.png"
-              alt="Landing Page Photo"
-              width={50}
-              height={50}
-              className="rounded-md"
-            />
-          </span>
+          {/* Text Block 4 */}
+          <div className="flex flex-wrap justify-center text-[18px] md:text-[20px] items-center mb-3 text-center">
+            <p className="w-full sm:w-auto">
+              When I’m not coding, I’m in the{" "}
+              <strong className="ml-2">kitchen experimenting</strong>
+            </p>
+            <span className="flex items-center mx-2 p-1 border-1 border-gray-800/10 shadow-md hover:scale-110 hover:rotate-[5deg] rounded-md bg-white backdrop-blur-md">
+              <Image
+                src="/homefood.png"
+                alt="Landing Page Photo"
+                width={50}
+                height={50}
+                className="rounded-md"
+              />
+            </span>
+            <p>
+              {" "}
+              or hunting for{" "}
+              <strong className="ml-2">Bangalore’s next food gem.</strong>
+            </p>
+            <span className="flex items-center mx-2 p-1 border-1 border-gray-800/10 shadow-md hover:scale-110 hover:rotate-[5deg] rounded-md bg-white backdrop-blur-md">
+              <Image
+                src="/waffle.png"
+                alt="Landing Page Photo"
+                width={50}
+                height={50}
+                className="rounded-md"
+              />
+            </span>
+          </div>
         </div>
       </div>
 
@@ -176,7 +178,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="flex flex-wrap gap-x-6 gap-y-4 items-center justify-center my-8 max-w-xs sm:max-w-md mx-auto">
+      <div className="grid grid-cols-3 md:grid-cols-6 gap-4 items-center justify-center my-8 max-w-xs sm:max-w-md md:max-w-none mx-auto">
         <a
           className="flex cursor-pointer items-center justify-center border-2 border-[#000] bg-transparent 
   shadow-xl w-10 h-10 aspect-square rounded-full 
@@ -237,6 +239,7 @@ export default function Home() {
           <Bookmark size={22} weight="bold" />
         </a>
       </div>
-    </>
+    </div>
+    </div>
   );
 }

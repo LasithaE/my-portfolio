@@ -52,6 +52,9 @@ body::-webkit-scrollbar {
 .font-eb-garamond {
   font-family: "EB Garamond", sans-serif;
 }
+.font-instrument {
+  font-family: "Instrument", sans-serif;
+}
 .font-jost {
   font-family: "Jost", sans-serif;
 }

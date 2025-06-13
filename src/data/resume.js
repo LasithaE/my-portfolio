@@ -4,9 +4,10 @@ export const dev_tools = [
   { icon: "/vscode.svg", label: "VS Code" },
   { icon: "/react.svg", label: "React" },
   { icon: "/html.svg", label: "HTML" },
+  { icon: "/js.png", label: "JS" },
   { icon: "/python.svg", label: "Python" },
   { icon: "/css.svg", label: "CSS" },
-  { icon: "/figma.svg", label: "Figma" },
+  { icon: "/sql.png", label: "SQL" },
 ];
 export const resume = [
   // {
