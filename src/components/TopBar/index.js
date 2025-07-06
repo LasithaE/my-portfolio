@@ -16,11 +16,12 @@ import WavyUnderline from "../WavyUnderline";
 export function TopBar() {
   const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
-  const isWorkPage = pathname === "/work";
   const [clicked, setClicked] = useState(() => {
     switch (pathname) {
       case "/work":
         return "Work";
+      case "/articles":
+        return "Articles";
       case "/about":
         return "About";
       case "/":
@@ -47,6 +48,9 @@ export function TopBar() {
       case "/about":
         setClicked("About");
         break;
+      case "/articles":
+        setClicked("Articles");
+        break;
       case "/":
         setClicked("Home");
         break;
@@ -68,9 +72,8 @@ export function TopBar() {
             height={50}
           />
         </div>
-
         {/* Desktop Nav (Centered) */}
-        <div className="hidden md:flex items-center justify-center gap-6 flex-1 mt-4">
+        <div className="hidden md:flex items-center justify-center gap-4 flex-1 mt-4">
           <Link href="/">
             <button onClick={() => setClicked("Home")}>
               <WavyUnderline text={"Home"} selected={clicked} />
@@ -80,6 +83,12 @@ export function TopBar() {
           <Link href="/work">
             <button onClick={() => setClicked("Work")}>
               <WavyUnderline text={"Work"} selected={clicked} />
+            </button>
+          </Link>
+          <Star size={14} weight={"fill"} />
+          <Link href="/articles">
+            <button onClick={() => setClicked("Articles")}>
+              <WavyUnderline text={"Articles"} selected={clicked} />
             </button>
           </Link>
           <Star size={14} weight={"fill"} />
@@ -102,7 +111,7 @@ export function TopBar() {
               <ChatTeardropText size={20} />
             </span>
             <span className="ml-2 overflow-hidden max-w-0 opacity-0 group-hover:max-w-[160px] group-hover:opacity-100 transition-all duration-300 text-sm whitespace-nowrap">
-              Connect with me
+              Connect
             </span>
           </a>
 
@@ -115,7 +124,7 @@ export function TopBar() {
               <DownloadSimple size={20} />
             </span>
             <span className="ml-2 overflow-hidden max-w-0 opacity-0 group-hover:max-w-[200px] group-hover:opacity-100 transition-all duration-300 text-sm whitespace-nowrap">
-              Download my resume
+              Resume
             </span>
           </a>
         </div>
@@ -174,6 +183,17 @@ export function TopBar() {
               <button
                 className="cursor-pointer"
                 onClick={() => {
+                  setClicked("Articles");
+                  setMenuOpen(false);
+                }}
+              >
+                <Link href="/articles">
+                  <WavyUnderline text={"Articles"} selected={clicked} />
+                </Link>
+              </button>
+              <button
+                className="cursor-pointer"
+                onClick={() => {
                   setClicked("Work");
                   setMenuOpen(false);
                 }}
@@ -193,32 +213,6 @@ export function TopBar() {
                   <WavyUnderline text={"About"} selected={clicked} />
                 </Link>
               </button>
-              {/* {isWorkPage ? (
-                <button
-                  className="px-4 py-2 mt-4 text-white bg-gray-800 border border-gray-800 rounded-lg shadow-md 
-      hover:bg-white hover:text-gray-800 hover:scale-105 transition cursor-pointer"
-                  onClick={() => {
-                    setMenuOpen(false);
-                    window.open("/resume.pdf", "_blank");
-                  }}
-                >
-                  Download My Resume
-                </button>
-              ) : (
-                <a
-                  href="https://x.com/lasitha_e"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <button
-                    className="px-4 py-2 mt-4 text-white bg-gray-800 border border-gray-800 rounded-lg shadow-md 
-        hover:bg-white hover:text-gray-800 hover:scale-105 transition cursor-pointer"
-                    onClick={() => setMenuOpen(false)}
-                  >
-                    Let’s connect
-                  </button>
-                </a>
-              )} */}
             </nav>
           </div>
         </div>

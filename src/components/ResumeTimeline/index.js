@@ -3,7 +3,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import ResumeCard from "../ResumeCard";
 import Image from "next/image";
-import { resume } from "@/data/resume";
+import { resume } from "@/app/articles/resume";
 
 const ResumeTimeline = () => {
   return (
