@@ -4,18 +4,20 @@ import Image from "next/image";
 
 export const BlockQuotes = () => {
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col  mx-auto">
       <div className="mb-5">
-        <span className="font-bold text-[22px]">Hey, I am Lasitha E 👋🏻</span>
+        <span className="font-bold text-[22px] italic">Hey, I am Lasitha E 👋🏻</span>
         <br />
         <i>
-          <span className="text-[16px] text-[#364153]">
+          <span style={{
+              fontFamily: "Jost"
+          }} className="text-[16px] text-[#364153]">
             Product Manager in the making with{" "}
             <strong>3+ years of experience in fast-paced startups</strong> as a{" "}
             <strong>frontend developer and project lead</strong>.
             <br />
-            Skilled in <strong>collaboration</strong>, user-first thinking, and
-            execution. Currently building <strong>case studies</strong> and
+            Skilled in collaboration, user-first thinking, and
+            execution. Currently building case studies and
             doing user research to move into product.
           </span>
         </i>
