@@ -9,9 +9,10 @@ const Work = () => {
   const [selected, setSelected] = useState(null);
   return (
     <>
-      <div className="my-8 flex justify-center px-4 w-full md:max-w-screen-md mx-auto px-6 ">
+      <div className="flex justify-center px-4 w-full md:max-w-screen-md mx-auto px-6 md:my-8">
         <div className="w-full max-w-screen-xl">
           <div className="px-4">
+          <WavyUnderline text={"Work"} selected={"Work"} textClassName={'text-[26px]'} className={'my-3 block md:hidden'}/>
             <div className="flex flex-col items-center justify-start">
               <div className="w-full mb-10">
                 <div
@@ -92,8 +93,20 @@ const Work = () => {
                       </div>
                       <div>
                         <div className="flex flex-row gap-3">
-                      <Image src={work.icon} height={40} width={40} className="rounded-md block md:hidden h-[48px]" alt={"mobile icon"} />
-                       <Image src={work.icon} height={30} width={30} className="rounded-md hidden md:block h-[35px]" alt={"desktop icon"}/>
+                          <Image
+                            src={work.icon}
+                            height={40}
+                            width={40}
+                            className="rounded-md block md:hidden h-[40px]"
+                            alt={"mobile icon"}
+                          />
+                          <Image
+                            src={work.icon}
+                            height={30}
+                            width={30}
+                            className="rounded-md hidden md:block h-[35px]"
+                            alt={"desktop icon"}
+                          />
                           <h3 className="text-base font-semibold">
                             {work.title}{" "}
                             <span className="text-gray-600 font-semibold italic">

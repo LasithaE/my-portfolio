@@ -64,14 +64,19 @@ export function TopBar() {
       {/* Navbar */}
       <div className="flex items-center justify-between h-16 w-full md:max-w-screen-md mx-auto px-6 md:mt-5">
         {/* Logo */}
-        <div className="flex-shrink-0 mt-4">
-          <Image
-            src="/sign_black_and_red.png"
-            alt="Sign Icon"
-            width={120}
-            height={50}
-          />
-        </div>
+        <Link href="/">
+          <button onClick={() => setClicked("Home")}>
+            <div className="flex-shrink-0 mt-4">
+              <Image
+                src="/sign_black_and_red.png"
+                alt="Sign Icon"
+                width={120}
+                height={50}
+              />{" "}
+            </div>
+          </button>
+        </Link>
+
         {/* Desktop Nav (Centered) */}
         <div className="hidden md:flex items-center justify-center gap-4 flex-1 mt-4">
           <Link href="/">

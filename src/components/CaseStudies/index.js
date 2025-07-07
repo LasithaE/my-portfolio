@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import WavyUnderline from "@/components/WavyUnderline";
 import { ArrowUpRight } from "@phosphor-icons/react";
 import { caseStudies } from "@/app/articles/casestudies";
 
@@ -32,6 +33,12 @@ export default function CaseStudies({ selected, setSelected }) {
 
   return (
     <div className="space-y-6">
+      <WavyUnderline
+        text={"Articles"}
+        selected={"Articles"}
+        textClassName={"text-[26px]"}
+        className={"my-3 block md:hidden"}
+      />
       <div className="flex flex-wrap gap-2 mt-6">
         {allTags.map((tag) => (
           <button

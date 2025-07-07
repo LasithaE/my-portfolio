@@ -10,11 +10,19 @@ export default function Home() {
     <div className="w-full px-6 sm:px-4">
       <div className="w-full max-w-[92vw] md:max-w-screen-md mx-auto flex flex-col items-center justify-center">
         {/* Responsive layout for image + blockquote */}
-        <div className="flex flex-col md:flex-row gap-6 mt-6 md:mt-12 w-full">
+        {/* <div className="flex flex-col md:flex-row gap-6 mt-6 md:mt-12 w-full">
           <div className="w-full md:w-auto">
             <ImageTray />
           </div>
           <div className="w-full flex flex-col justify-between">
+            <BlockQuotes />
+          </div>
+        </div> */}
+        <div className="flex flex-col md:flex-row gap-6 mt-6 md:mt-12 w-full items-center md:items-start">
+          <div className="w-full flex justify-center md:block">
+            <ImageTray />
+          </div>
+          <div className="w-full flex justify-center md:block">
             <BlockQuotes />
           </div>
         </div>
