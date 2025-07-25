@@ -105,12 +105,12 @@ export default function LeapMVP() {
     structured, visa-aware, and completely free to start.
   </p>
   <div className="flex flex-col md:flex-row justify-center gap-4 max-w-xl mx-auto">
-    <button className="bg-white text-[#1976ed] font-semibold px-8 py-3 rounded-lg shadow hover:bg-gray-100 transition">
+  <Link href="leap-mvp/free"><button className="bg-white text-[#1976ed] font-semibold px-8 py-3 rounded-lg shadow hover:bg-gray-100 transition">
       Start Your Career Journey
-    </button>
-    <button className="bg-white text-[#1976ed] font-semibold px-8 py-3 rounded-lg shadow hover:bg-gray-100 transition">
+    </button></Link>
+    <Link href="leap-mvp/free"> <button className="bg-white text-[#1976ed] font-semibold px-8 py-3 rounded-lg shadow hover:bg-gray-100 transition">
    Explore Free Tools
-    </button>
+    </button></Link>
   </div>
 </div>
 
@@ -290,7 +290,7 @@ export default function LeapMVP() {
           ))}
         </div>
         <div style={{ textAlign: 'center' }}>
-          <button
+        <Link href="leap-mvp/free">       <button
             style={{
               backgroundColor: '#1976ed',
               color: 'white',
@@ -303,7 +303,7 @@ export default function LeapMVP() {
             }}
           >
             Connect with Alumni
-          </button>
+          </button></Link>
         </div>
       </section>
     </>
