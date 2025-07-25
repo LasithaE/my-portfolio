@@ -9,6 +9,7 @@ import {
 import "@/app/globals.css";
 import { TopBar } from "@/components/TopBar";
 import Image from "next/image";
+import { TopBarWrapper } from "@/components/TopBarWrapper";
 
 const fleurDeLeah = Fleur_De_Leah({
   variable: "--font-fleur-de-leah",
@@ -52,7 +53,7 @@ export default function RootLayout({ children }) {
         cz-shortcut-listen="true"
       >
         <div className="sticky top-0 z-50 bg-white pb-3 md:bg-transparent md:static">
-          <TopBar />
+          <TopBarWrapper />
         </div>
 
         {/* Main content area takes remaining height */}
