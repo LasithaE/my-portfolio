@@ -4,12 +4,12 @@ import { TopBar } from "@/components/TopBar";
 
 export function TopBarWrapper() {
   const pathname = usePathname();
-  const hideTopBar = pathname.startsWith("/casestudy-mvp");
+  const hideTopBar = pathname === "/"; // only true at root
 
   if (hideTopBar) return null;
 
   return (
-    <div className="sticky top-0 z-50 bg-whit md:bg-transparent md:static">
+    <div className="sticky top-0 z-50 bg-white md:bg-transparent md:static">
       <TopBar />
     </div>
   );

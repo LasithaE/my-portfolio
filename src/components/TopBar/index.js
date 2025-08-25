@@ -70,8 +70,8 @@ export function TopBar() {
               <Image
                 src="/sign_black_and_red.png"
                 alt="Sign Icon"
-                width={120}
-                height={50}
+                width={100}
+                height={40}
               />{" "}
             </div>
           </button>
@@ -113,7 +113,7 @@ export function TopBar() {
             className="group flex items-center h-10 bg-gray-800 text-white pl-2 pr-0 hover:pr-3 rounded-full transition-all duration-200"
           >
             <span className="w-6 h-6 flex items-center justify-center">
-              <ChatTeardropText size={20} />
+              <ChatTeardropText size={14} />
             </span>
             <span className="ml-2 overflow-hidden max-w-0 opacity-0 group-hover:max-w-[160px] group-hover:opacity-100 transition-all duration-300 text-sm whitespace-nowrap">
               Connect
@@ -122,11 +122,11 @@ export function TopBar() {
 
           <a
             href="/resume.pdf"
-            download
+        download="Lasitha_E_PM_Resume.pdf"
             className="group flex items-center h-10 bg-gray-800 text-white pl-2 pr-0 hover:pr-3 rounded-full transition-all duration-200"
           >
             <span className="w-6 h-6 flex items-center justify-center">
-              <DownloadSimple size={20} />
+              <DownloadSimple size={14} />
             </span>
             <span className="ml-2 overflow-hidden max-w-0 opacity-0 group-hover:max-w-[200px] group-hover:opacity-100 transition-all duration-300 text-sm whitespace-nowrap">
               Resume
@@ -142,14 +142,14 @@ export function TopBar() {
                 href="https://x.com/lasitha_e"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-gray-900 text-white p-2 rounded-full"
+                className="bg-gray-900 text-white p-1 rounded-full"
               >
                 <ChatTeardropText size={16} />
               </a>
               <a
                 href="/resume.pdf"
-                download
-                className="bg-gray-900 text-white p-2 rounded-full"
+              download="Lasitha_E_PM_Resume.pdf"
+                className="bg-gray-900 text-white p-1 rounded-full"
               >
                 <DownloadSimple size={16} />
               </a>

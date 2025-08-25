@@ -5,7 +5,7 @@ const WavyUnderline = ({ text, selected, textClassName, className }) => {
 
   return (
     <div className={`relative inline-block ${className}`}>
-      <span className={`font-semibold cursor-normal ${textClassName??'text-[20px]'}`}>{text}</span>
+      <span className={`font-semibold cursor-normal ${textClassName??'text-[18px]'}`}>{text}</span>
       {selected === text && (
         <motion.div
           className="absolute left-0 bottom-0 w-full h-1"
