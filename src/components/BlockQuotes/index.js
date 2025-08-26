@@ -4,13 +4,13 @@ import Image from "next/image";
 
 export const BlockQuotes = () => {
   return (
-    <div className="flex flex-col  mx-auto">
+    <div className="flex flex-col mx-auto">
       <div className="mb-5">
-        <span className="font-bold text-[22px] italic">Hey, I am Lasitha E 👋🏻</span>
+        <span className="font-bold text-[22px] md:text-[26px] italic">Hey, I am Lasitha E 👋🏻</span>
         <br />
         <i>
           <span style={{
-              fontFamily: "Jost"
+              fontFamily: "Jost", fontStyle:"normal"
           }} className="text-[16px] text-[#364153]">
             Product Manager in the making with{" "}
             <strong>3+ years of experience in fast-paced startups</strong> as a{" "}
@@ -23,7 +23,7 @@ export const BlockQuotes = () => {
         </i>
       </div>
 
-      <div className="flex flex-wrap justify-center md:justify-between gap-4 text-[16px] md:text-[18px] items-center text-center">
+      <div className="flex flex-wrap justify-center md:justify-between gap-4 text-[16px] md:text-[18px] items-center text-center md:mt-6">
         <div className="flex flex-col justify-center gap-6 w-full mb-2 text-[16px] md:text-[18px] text-[#364153]">
           <div className="relative">
             <span className="absolute -top-3 -left-3 text-[24px] rotate-[-36deg] z-10">

@@ -31,23 +31,33 @@ export default function Home() {
           <span className="text-start mb-2">Quick Links</span>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full text-[16px] md:text-[18px] mb-10">
-          {[
-            { href: "https://x.com/lasitha_e", label: "📜 Case Studies" },
-            { href: "https://x.com/lasitha_e", label: "🚀 My Journey" },
-            { href: "https://x.com/lasitha_e", label: "💼 Experience" },
-            { href: "https://x.com/lasitha_e", label: "✨ About" },
-          ].map((link, index) => (
-            <a
-              key={index}
-              href={link.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block w-full text-center hover:scale-105 transition-transform border bg-white border-gray-300 shadow-md rounded-md px-4 py-3"
-            >
-              {link.label}
-            </a>
-          ))}
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full text-[16px] md:text-[18px] mb-6">
+        {[
+  { href: "/articles", label: "📂  Case Studies" },
+  { href: "/resume.pdf", label: "📜  Resume" },
+  { href: "/work", label: "💼  Experience" },
+  { href: "/about", label: "✨  About" },
+].map((link, index) => (
+  link.href === "/resume.pdf" ? (
+    <a
+      key={index}
+    href="/resume.pdf"
+  download="Lasitha_E_PM_Resume.pdf"
+      className="block w-full text-center hover:scale-105 transition-transform border bg-white border-gray-300 shadow-md rounded-md px-4 py-3"
+    >
+      {link.label}
+    </a>
+  ) : (
+    <a
+      key={index}
+      href={link.href}
+      className="block w-full text-center hover:scale-105 transition-transform border bg-white border-gray-300 shadow-md rounded-md px-4 py-3"
+    >
+      {link.label}
+    </a>
+  )
+))}
+
         </div>
 
         <Socials />

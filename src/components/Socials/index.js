@@ -14,7 +14,7 @@ import Image from "next/image";
 const Socials = () => {
   return (
     <>
-      <div className="flex flex-row justify-center items-center mb-3 text-center">
+      <div className="flex flex-row justify-center items-center text-center">
         <p className="w-full sm:w-auto">
           Would I rather be feared or loved? Easy.{" "}
           <strong>Loved. On socials.</strong>

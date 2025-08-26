@@ -36,7 +36,7 @@ export default function About() {
           whileInView="visible"
           viewport={{ once: true }}
           variants={sectionVariants}
-          className="flex flex-col sm:flex-row gap-6 my-15 items-center justify-center"
+          className="flex flex-col sm:flex-row gap-6 my-7 items-center justify-center"
         >
           <Image
             src="/thinking.png"
@@ -79,7 +79,7 @@ export default function About() {
           whileInView="visible"
           viewport={{ once: true }}
           variants={sectionVariants}
-          className="flex flex-col sm:flex-row gap-6 my-15 items-center justify-center"
+          className="flex flex-col sm:flex-row gap-6 my-7 items-center justify-center"
         >
           <Image
             src="/reading.png"
@@ -131,7 +131,7 @@ export default function About() {
           whileInView="visible"
           viewport={{ once: true }}
           variants={sectionVariants}
-          className="flex flex-col sm:flex-row gap-6 my-15 items-center justify-center"
+          className="flex flex-col sm:flex-row gap-6 my-7 items-center justify-center"
         >
           <Image
             src="/flight.png"
@@ -160,7 +160,7 @@ export default function About() {
           whileInView="visible"
           viewport={{ once: true }}
           variants={sectionVariants}
-          className="text-center mb-30 text-[16px] md:text-[20px]"
+          className="text-center mb-8 text-[16px] md:text-[20px]"
         >
           So yeah, this is me—
           <strong>

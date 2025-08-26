@@ -6,6 +6,28 @@ export const caseStudies = [
     image: "/analytics_blinkit.png",
     tags: ["B2C", "Analytics"],
     link: "https://lasithae.substack.com/p/analytics-and-metrics-blinkit-slack",
+  },  {
+    title: "Urban Company: RCA",
+    description:
+      "Problem Statement: As a PM at Urban Company, I’ll analyze why iOS ratings dropped from 4.7 to 4.1 in 6 months by reviewing user feedback, app updates, and service quality.",
+    image: "/urban_company.jpg",
+    tags: ["B2C", "Analytics"],
+    link: "https://lasithae.substack.com/p/urban-company-rca",
+  },
+  {
+    title: "Showdown of CX platforms",
+    description:
+      "Problem Statement: I’ve broken down the big players like LimeChat, Gupshup, Yellow.ai, AiSensy, Wati - main players of CX platforms",
+    image: "/urban_company.jpg",
+    tags: ["B2C", "Analytics", "Retention"],
+    link: "https://www.linkedin.com/feed/update/urn:li:activity:7364518386929733632/",
+  },  {
+    title: "Duolingo: Problem Framing and Prioritisation",
+    description:
+      "Problem Statement: As a PM at Duolingo, the goal is to boost course completion by analyzing user behavior, identifying drop-off points, and creating strategies to maintain engagement and progress.",
+    image: "/duolingo.png",
+    tags: ["EdTech", "Retention"],
+    link: "https://www.linkedin.com/feed/update/urn:li:activity:7358698445085294592/",
   },
   {
     title: "Zinga: Improvement on Retention and Engagement",
@@ -32,21 +54,14 @@ export const caseStudies = [
     link: "https://lasithae.substack.com/p/tinder-for-marry-and-uber-for-kids",
   },
   {
-    title: "File Management App :1-Pager Brief + Basic Wireframes",
+    title: "File Management App : 1-Pager Brief + Basic Wireframes",
     description:
       "Problem Statement: A secure app for Millennials to store, manage & access personal records with privacy, quick retrieval & reminders.",
     image: "/file_management.png",
     tags: ["B2C", "Ideation"],
     link: "https://lasithae.substack.com/p/file-management-app-1-pager-brief",
   },
-  {
-    title: "Urban Company: RCA",
-    description:
-      "Problem Statement: As a PM at Urban Company, I’ll analyze why iOS ratings dropped from 4.7 to 4.1 in 6 months by reviewing user feedback, app updates, and service quality.",
-    image: "/urban_company.jpg",
-    tags: ["B2C", "Analytics"],
-    link: "https://lasithae.substack.com/p/urban-company-rca",
-  },
+
   {
     title: "NOBROKER: Product Discovery, Market & User Research",
     description:
@@ -55,12 +70,5 @@ export const caseStudies = [
     tags: ["B2C", "User Research"],
     link: "https://lasithae.substack.com/p/nobroker-product-discovery-market",
   },
-  {
-    title: "Duolingo: Problem Framing and Prioritisation",
-    description:
-      "Problem Statement: As a PM at Duolingo, the goal is to boost course completion by analyzing user behavior, identifying drop-off points, and creating strategies to maintain engagement and progress.",
-    image: "/duolingo.png",
-    tags: ["EdTech", "Retention"],
-    link: "https://lasithae.substack.com/p/problem-framing-and-prioritisation",
-  },
+
 ];

@@ -52,11 +52,10 @@ export default function RootLayout({ children }) {
         className={`${fleurDeLeah.variable} ${jost.variable} ${EBGaramond.variable} ${inter.variable} antialiased polka-dot overflow-x-hidden flex flex-col min-h-screen`}
         cz-shortcut-listen="true"
       >
-        <div className="sticky top-0 z-50 bg-white pb-3 md:bg-transparent md:static">
+        {/* <div className="sticky top-0 z-50 bg-white pb-3 md:bg-transparent md:static"> */}
           <TopBarWrapper />
-        </div>
+        {/* </div> */}
 
-        {/* Main content area takes remaining height */}
         <main className="flex-1">{children}</main>
 
         <footer className="flex items-center flex-col justify-center mb-0 md:mb-10">
