@@ -4,7 +4,7 @@ import { TopBar } from "@/components/TopBar";
 
 export function TopBarWrapper() {
   const pathname = usePathname();
-  const hideTopBar = pathname === "/"; // only true at root
+  const hideTopBar = pathname === "/" || pathname.startsWith("/personal-mba"); // hide at root and on the MBA page (has its own header)
 
   if (hideTopBar) return null;
 

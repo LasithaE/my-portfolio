@@ -24,6 +24,8 @@ export function TopBar() {
         return "Articles";
       case "/about":
         return "About";
+      case "/personal-mba":
+        return "MBA";
       case "/":
         return "Home";
       default:
@@ -50,6 +52,9 @@ export function TopBar() {
         break;
       case "/articles":
         setClicked("Articles");
+        break;
+      case "/personal-mba":
+        setClicked("MBA");
         break;
       case "/":
         setClicked("Home");
@@ -100,6 +105,12 @@ export function TopBar() {
           <Link href="/about">
             <button onClick={() => setClicked("About")}>
               <WavyUnderline text={"About"} selected={clicked} />
+            </button>
+          </Link>
+          <Star size={14} weight={"fill"} />
+          <Link href="/personal-mba">
+            <button onClick={() => setClicked("MBA")}>
+              <WavyUnderline text={"MBA"} selected={clicked} />
             </button>
           </Link>
         </div>
@@ -216,6 +227,17 @@ export function TopBar() {
               >
                 <Link href="/about">
                   <WavyUnderline text={"About"} selected={clicked} />
+                </Link>
+              </button>
+              <button
+                className="cursor-pointer"
+                onClick={() => {
+                  setClicked("MBA");
+                  setMenuOpen(false);
+                }}
+              >
+                <Link href="/personal-mba">
+                  <WavyUnderline text={"MBA"} selected={clicked} />
                 </Link>
               </button>
             </nav>
