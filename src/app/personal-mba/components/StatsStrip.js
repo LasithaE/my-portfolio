@@ -45,50 +45,50 @@ export function StatsStrip({ resources, logs }) {
 
   const Stat = ({ value, label, color }) => (
     <span style={{ display: 'flex', alignItems: 'baseline', gap: 5 }}>
-      <span style={{ color, fontSize: 15, fontWeight: 600 }}>{value}</span>
-      <span style={{ color: '#555', fontSize: 12 }}>{label}</span>
+      <span style={{ color, fontSize: 14, fontWeight: 700 }}>{value}</span>
+      <span style={{ color: '#9ca3af', fontSize: 12 }}>{label}</span>
     </span>
   )
 
   return (
-    <div style={{ borderBottom: '1px solid #1E1E1E', backgroundColor: '#0D0D0D' }}>
+    <div style={{ borderBottom: '1px solid #e5e7eb', backgroundColor: 'rgba(255,255,255,0.7)' }}>
       <button onClick={() => setExpanded(e => !e)}
-        style={{ display: 'flex', alignItems: 'center', gap: 24, padding: '10px 32px', background: 'none', border: 'none', cursor: 'pointer', width: '100%', textAlign: 'left' }}>
-        <Stat value={completed}  label="completed"   color="#4A8A8A" />
-        <Stat value={inProgress} label="in progress" color="#4A8A4A" />
-        <Stat value={notStarted} label="not started" color="#555"    />
-        {streak > 0 && <span style={{ color: '#D4A853', fontSize: 13 }}>🔥 {streak} day streak</span>}
-        <span style={{ marginLeft: 'auto', color: '#444', fontSize: 11, transform: expanded ? 'rotate(180deg)' : 'none', display: 'inline-block', transition: 'transform 0.2s' }}>▾</span>
+        style={{ display: 'flex', alignItems: 'center', gap: 24, padding: '8px 32px', background: 'none', border: 'none', cursor: 'pointer', width: '100%', textAlign: 'left' }}>
+        <Stat value={completed}  label="completed"   color="#2563eb" />
+        <Stat value={inProgress} label="in progress" color="#16a34a" />
+        <Stat value={notStarted} label="not started" color="#9ca3af" />
+        {streak > 0 && <span style={{ color: '#b8860b', fontSize: 13 }}>🔥 {streak} day streak</span>}
+        <span style={{ marginLeft: 'auto', color: '#d1d5db', fontSize: 10, transform: expanded ? 'rotate(180deg)' : 'none', display: 'inline-block', transition: 'transform 0.2s' }}>▾</span>
       </button>
 
       {expanded && (
         <div style={{ padding: '0 32px 16px', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: 20 }}>
           <div>
-            <div style={{ color: '#666', fontSize: 11, fontWeight: 600, letterSpacing: '0.06em', textTransform: 'uppercase', marginBottom: 8 }}>By Subject</div>
+            <div style={{ color: '#6b7280', fontSize: 11, fontWeight: 600, letterSpacing: '0.06em', textTransform: 'uppercase', marginBottom: 8 }}>By Subject</div>
             {subjectCounts.length === 0
-              ? <div style={{ color: '#333', fontSize: 12 }}>No completions yet</div>
+              ? <div style={{ color: '#d1d5db', fontSize: 12 }}>No completions yet</div>
               : subjectCounts.map(([subject, count]) => (
                   <div key={subject} style={{ marginBottom: 6 }}>
                     <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 2 }}>
-                      <span style={{ color: '#C0BBB4', fontSize: 11 }}>{subject}</span>
-                      <span style={{ color: '#666', fontSize: 11 }}>{count}</span>
+                      <span style={{ color: '#374151', fontSize: 11 }}>{subject}</span>
+                      <span style={{ color: '#9ca3af', fontSize: 11 }}>{count}</span>
                     </div>
-                    <div style={{ height: 3, backgroundColor: '#1E1E1E', borderRadius: 2 }}>
+                    <div style={{ height: 3, backgroundColor: '#f3f4f6', borderRadius: 2 }}>
                       <div style={{ height: '100%', width: `${(count/maxSubject)*100}%`, backgroundColor: '#D4A853', borderRadius: 2 }} />
                     </div>
                   </div>
                 ))}
           </div>
           <div>
-            <div style={{ color: '#666', fontSize: 11, fontWeight: 600, letterSpacing: '0.06em', textTransform: 'uppercase', marginBottom: 8 }}>This Week</div>
-            <div style={{ color: '#F0EDE8', fontSize: 24, fontWeight: 600 }}>{weekHours}h</div>
-            <div style={{ color: '#666', fontSize: 12 }}>logged</div>
+            <div style={{ color: '#6b7280', fontSize: 11, fontWeight: 600, letterSpacing: '0.06em', textTransform: 'uppercase', marginBottom: 8 }}>This Week</div>
+            <div style={{ color: '#111827', fontSize: 24, fontWeight: 700 }}>{weekHours}h</div>
+            <div style={{ color: '#9ca3af', fontSize: 12 }}>logged</div>
           </div>
           {lastCompleted && (
             <div>
-              <div style={{ color: '#666', fontSize: 11, fontWeight: 600, letterSpacing: '0.06em', textTransform: 'uppercase', marginBottom: 8 }}>Last Completed</div>
-              <div style={{ color: '#F0EDE8', fontSize: 13, fontWeight: 600 }}>{lastCompleted.title}</div>
-              {lastCompleted.author && <div style={{ color: '#666', fontSize: 12 }}>{lastCompleted.author}</div>}
+              <div style={{ color: '#6b7280', fontSize: 11, fontWeight: 600, letterSpacing: '0.06em', textTransform: 'uppercase', marginBottom: 8 }}>Last Completed</div>
+              <div style={{ color: '#111827', fontSize: 13, fontWeight: 600 }}>{lastCompleted.title}</div>
+              {lastCompleted.author && <div style={{ color: '#6b7280', fontSize: 12 }}>{lastCompleted.author}</div>}
               {lastCompleted.dateCompleted && (
                 <div style={{ color: '#D4A853', fontSize: 11, marginTop: 4 }}>
                   {new Date(lastCompleted.dateCompleted).toLocaleDateString('en-GB', { month: 'short', day: 'numeric', year: 'numeric' })}

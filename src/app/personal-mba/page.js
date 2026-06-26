@@ -15,44 +15,45 @@ export default function PersonalMBA() {
   return (
     <div style={{
       minHeight: '100vh',
-      backgroundColor: '#0D0D0D',
-      color: '#F0EDE8',
-      fontFamily: "'Jost', 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif",
+      color: '#111827',
+      fontFamily: "'Jost', -apple-system, BlinkMacSystemFont, sans-serif",
       display: 'flex',
       flexDirection: 'column',
-      backgroundImage: 'none',
     }}>
       {/* Page header */}
       <header style={{
-        borderBottom: '1px solid #1E1E1E',
+        borderBottom: '1px solid #e5e7eb',
         padding: '0 32px',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'space-between',
-        height: 56,
+        height: 52,
         flexShrink: 0,
+        backgroundColor: 'rgba(255,255,255,0.8)',
+        backdropFilter: 'blur(8px)',
       }}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: 24 }}>
-          <Link href="/" style={{ color: '#555', fontSize: 12, textDecoration: 'none', letterSpacing: '0.04em', display: 'flex', alignItems: 'center', gap: 6 }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 20 }}>
+          <Link href="/" style={{ color: '#9ca3af', fontSize: 12, textDecoration: 'none', letterSpacing: '0.04em' }}>
             ← lassi.
           </Link>
-          <div style={{ width: 1, height: 16, backgroundColor: '#2A2A2A' }} />
-          <span style={{ color: '#F0EDE8', fontWeight: 600, fontSize: 14, letterSpacing: '0.04em' }}>Personal MBA</span>
+          <div style={{ width: 1, height: 14, backgroundColor: '#e5e7eb' }} />
+          <span style={{ color: '#111827', fontWeight: 600, fontSize: 14, letterSpacing: '0.03em' }}>Personal MBA</span>
         </div>
 
-        <div style={{ display: 'flex', border: '1px solid #2A2A2A', borderRadius: 4, overflow: 'hidden' }}>
+        <div style={{ display: 'flex', border: '1px solid #e5e7eb', borderRadius: 6, overflow: 'hidden' }}>
           {['board', 'log'].map((v, i) => (
             <button key={v} onClick={() => setView(v)}
               style={{
                 padding: '5px 14px',
-                background: view === v ? '#D4A85318' : 'transparent',
+                background: view === v ? '#D4A85315' : 'transparent',
                 border: 'none',
-                borderRight: i === 0 ? '1px solid #2A2A2A' : 'none',
-                color: view === v ? '#D4A853' : '#555',
+                borderRight: i === 0 ? '1px solid #e5e7eb' : 'none',
+                color: view === v ? '#b8860b' : '#6b7280',
                 fontSize: 12, cursor: 'pointer',
                 textTransform: 'capitalize',
                 fontFamily: 'inherit',
                 letterSpacing: '0.04em',
+                fontWeight: view === v ? 600 : 400,
               }}>
               {v === 'board' ? 'Board' : 'Log'}
             </button>
@@ -66,7 +67,7 @@ export default function PersonalMBA() {
       {/* Content */}
       {!isLoaded ? (
         <div style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-          <span style={{ color: '#333', fontSize: 13 }}>Loading…</span>
+          <span style={{ color: '#9ca3af', fontSize: 13 }}>Loading…</span>
         </div>
       ) : view === 'board' ? (
         <BoardView resources={resources} onUpdate={upsertResource} onDelete={deleteResource} onAdd={addResource} />

@@ -19,8 +19,8 @@ const STATUS_OPTIONS = [
 ]
 
 const sel = {
-  background: '#161616', border: '1px solid #2A2A2A', borderRadius: 4,
-  color: '#F0EDE8', padding: '6px 28px 6px 10px', fontSize: 12,
+  background: '#ffffff', border: '1px solid #e5e7eb', borderRadius: 5,
+  color: '#374151', padding: '5px 28px 5px 10px', fontSize: 12,
   outline: 'none', cursor: 'pointer', appearance: 'none', WebkitAppearance: 'none',
 }
 
@@ -40,8 +40,8 @@ export function FilterBar({ filters, setFilter, clearFilter, clearAll, activeCou
   }
 
   return (
-    <div style={{ position: 'sticky', top: 0, zIndex: 40, backgroundColor: '#0D0D0D', borderBottom: '1px solid #1E1E1E', padding: '10px 32px' }}>
-      <div style={{ display: 'flex', alignItems: 'center', gap: 12, flexWrap: 'wrap' }}>
+    <div style={{ position: 'sticky', top: 0, zIndex: 40, backgroundColor: 'rgba(255,255,255,0.92)', backdropFilter: 'blur(8px)', borderBottom: '1px solid #e5e7eb', padding: '8px 32px' }}>
+      <div style={{ display: 'flex', alignItems: 'center', gap: 10, flexWrap: 'wrap' }}>
         {[
           { key: 'week', opts: WEEK_OPTIONS, val: filters.week },
           { key: 'type', opts: TYPE_OPTIONS, val: filters.type },
@@ -51,20 +51,20 @@ export function FilterBar({ filters, setFilter, clearFilter, clearAll, activeCou
             <select style={sel} value={val} onChange={e => setFilter(key, e.target.value)}>
               {opts.map(o => <option key={o.value} value={o.value}>{o.label}</option>)}
             </select>
-            <span style={{ position: 'absolute', right: 8, top: '50%', transform: 'translateY(-50%)', color: '#666', pointerEvents: 'none', fontSize: 10 }}>▾</span>
+            <span style={{ position: 'absolute', right: 8, top: '50%', transform: 'translateY(-50%)', color: '#9ca3af', pointerEvents: 'none', fontSize: 10 }}>▾</span>
           </div>
         ))}
 
         {chips.map(chip => (
           <button key={chip.key} onClick={() => clearFilter(chip.key)}
-            style={{ display: 'flex', alignItems: 'center', gap: 6, background: '#D4A85318', border: '1px solid #D4A853', borderRadius: 4, color: '#D4A853', fontSize: 11, padding: '4px 8px', cursor: 'pointer' }}>
-            {chip.label} <span style={{ fontSize: 14, lineHeight: 1 }}>×</span>
+            style={{ display: 'flex', alignItems: 'center', gap: 5, background: '#fffbeb', border: '1px solid #D4A853', borderRadius: 5, color: '#b8860b', fontSize: 11, padding: '4px 8px', cursor: 'pointer' }}>
+            {chip.label} <span style={{ fontSize: 13, lineHeight: 1 }}>×</span>
           </button>
         ))}
 
         {activeCount > 1 && (
           <button onClick={clearAll}
-            style={{ background: 'none', border: 'none', color: '#555', fontSize: 11, cursor: 'pointer', textDecoration: 'underline', padding: '4px 0' }}>
+            style={{ background: 'none', border: 'none', color: '#9ca3af', fontSize: 11, cursor: 'pointer', textDecoration: 'underline', padding: '4px 0' }}>
             Clear all
           </button>
         )}
