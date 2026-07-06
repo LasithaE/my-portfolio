@@ -107,12 +107,6 @@ export function TopBar() {
               <WavyUnderline text={"About"} selected={clicked} />
             </button>
           </Link>
-          <Star size={14} weight={"fill"} />
-          <Link href="/personal-mba">
-            <button onClick={() => setClicked("MBA")}>
-              <WavyUnderline text={"MBA"} selected={clicked} />
-            </button>
-          </Link>
         </div>
 
         {/* Desktop Action Buttons (Right aligned) */}
@@ -227,17 +221,6 @@ export function TopBar() {
               >
                 <Link href="/about">
                   <WavyUnderline text={"About"} selected={clicked} />
-                </Link>
-              </button>
-              <button
-                className="cursor-pointer"
-                onClick={() => {
-                  setClicked("MBA");
-                  setMenuOpen(false);
-                }}
-              >
-                <Link href="/personal-mba">
-                  <WavyUnderline text={"MBA"} selected={clicked} />
                 </Link>
               </button>
             </nav>
