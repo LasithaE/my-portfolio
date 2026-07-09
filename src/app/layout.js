@@ -7,7 +7,6 @@ import {
   Instrument_Serif,
 } from "next/font/google";
 import "@/app/globals.css";
-import { TopBar } from "@/components/TopBar";
 import Image from "next/image";
 import { TopBarWrapper } from "@/components/TopBarWrapper";
 
