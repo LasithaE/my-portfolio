@@ -48,7 +48,7 @@ export const resume = [
     works: [
       "Built Instagram and Shopee order-channel integrations for LummoChat; merchants using these channels saw a <span class=\"bg-orange-100 text-orange-900 rounded px-1.5 py-0.5 font-semibold\">~35% increase in total orders</span> compared to pre-LummoChat baseline.",
       "Built a rich text editor for the chat experience, contributing to an <span class=\"bg-blue-100 text-blue-900 rounded px-1.5 py-0.5 font-semibold\">18% increase in customer response rates</span>.",
-      "Introduced ReCAPTCHA verification before WhatsApp redirect during merchant onboarding, blocking bot-driven message costs — <span class=\"bg-purple-100 text-purple-900 rounded px-1.5 py-0.5 font-semibold\">cut spam interactions by 63%</span>.",
+      "Introduced ReCAPTCHA verification before WhatsApp redirect during merchant onboarding, blocking bot-driven message costs - <span class=\"bg-purple-100 text-purple-900 rounded px-1.5 py-0.5 font-semibold\">cut spam interactions by 63%</span>.",
     ],
   },
 ];

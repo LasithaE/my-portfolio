@@ -21,7 +21,7 @@ const EBGaramond = EB_Garamond({
 export const metadata = {
   title: "Lasitha E ☆ Product",
   description:
-    "Product Manager with a background in frontend dev & project management — building, shipping, and writing about it.",
+    "Product Manager with a background in frontend dev & project management - building, shipping, and writing about it.",
   icons: {
     icon: "/tab_icon.png",
   },
