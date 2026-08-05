@@ -34,8 +34,8 @@ export const resume = [
     title: "Project Manager & Frontend Developer",
     experience: "Aug 2023 - Dec 2025",
     works: [
-      "Led the team to build a <span class=\"bg-orange-100 text-orange-900 rounded px-1.5 py-0.5 font-semibold\">Shopify-Airtable booking and ticketing system</span> for an events and family entertainment platform; owned full scoping, stakeholder alignment, and delivery end-to-end, <span class=\"bg-blue-100 text-blue-900 rounded px-1.5 py-0.5 font-semibold\">shipping in 6 months</span>.",
-      "Built an internal knowledge management platform for a government client, enabling staff to create a multimedia knowledge base and query it through an <span class=\"bg-purple-100 text-purple-900 rounded px-1.5 py-0.5 font-semibold\">AI chat interface</span>.",
+      "Led the team to build a <span class=\"bg-orange-100 text-orange-900 rounded px-1.5 py-0.5 font-semibold\">Shopify-Airtable booking and ticketing system</span> for an events and family entertainment platform, processing <span class=\"bg-blue-100 text-blue-900 rounded px-1.5 py-0.5 font-semibold\">1,000 tickets/day (30K/month)</span>; owned full scoping, stakeholder alignment, and delivery end-to-end, shipping in 6 months.",
+      "Built an internal knowledge management platform for a government client, indexing <span class=\"bg-purple-100 text-purple-900 rounded px-1.5 py-0.5 font-semibold\">200K documents</span> into a multimedia knowledge base queryable through an AI chat interface.",
     ],
   },
   {
