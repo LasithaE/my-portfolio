@@ -15,6 +15,7 @@ import WavyUnderline from "../WavyUnderline";
 
 const SECTIONS = [
   { id: "hero", label: "Home" },
+  { id: "projects", label: "Projects" },
   { id: "work", label: "Work" },
   { id: "about", label: "About" },
   { id: "thoughts", label: "Thoughts" },
