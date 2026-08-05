@@ -11,7 +11,7 @@ export default function Hero() {
           <div className="w-full flex justify-center md:block md:w-auto md:min-w-0 md:h-full md:overflow-hidden">
             <BlockQuotes />
           </div>
-          <div className="w-full flex justify-center md:block md:w-auto md:min-w-0 md:flex-shrink-0 md:h-full">
+          <div className="hidden md:flex md:justify-center md:w-auto md:min-w-0 md:flex-shrink-0 md:h-full">
             <ImageTray />
           </div>
         </div>
