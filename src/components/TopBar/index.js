@@ -1,228 +1,203 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import Image from "next/image";
-import Link from "next/link";
 import "../../app/globals.css";
-import { usePathname } from "next/navigation";
 import {
-  Star,
   X,
   List,
-  DownloadSimple,
-  ChatTeardropText,
+  FileArrowDown,
+  XLogo,
+  LinkedinLogo,
+  InstagramLogo,
+  Envelope,
 } from "@phosphor-icons/react";
 import WavyUnderline from "../WavyUnderline";
 
-export function TopBar() {
-  const pathname = usePathname();
-  const [menuOpen, setMenuOpen] = useState(false);
-  const [clicked, setClicked] = useState(() => {
-    switch (pathname) {
-      case "/work":
-        return "Work";
-      case "/articles":
-        return "Articles";
-      case "/about":
-        return "About";
-      case "/personal-mba":
-        return "MBA";
-      case "/":
-        return "Home";
-      default:
-        return "Home";
-    }
-  });
-  const [scrolledDown, setScrolledDown] = useState(false);
+const SECTIONS = [
+  { id: "hero", label: "Home" },
+  { id: "work", label: "Work" },
+  { id: "about", label: "About" },
+  { id: "thoughts", label: "Thoughts" },
+];
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolledDown(window.scrollY > 10);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+const SOCIALS = [
+  { href: "https://x.com/lasitha_e", icon: XLogo, label: "X" },
+  {
+    href: "https://www.linkedin.com/in/lasithae/",
+    icon: LinkedinLogo,
+    label: "LinkedIn",
+  },
+  {
+    href: "https://www.instagram.com/lassinotlassi/",
+    icon: InstagramLogo,
+    label: "Instagram",
+  },
+  {
+    href: "mailto:lasithaeaswaran@gmail.com",
+    icon: Envelope,
+    label: "Email",
+  },
+];
 
-  useEffect(() => {
-    switch (pathname) {
-      case "/work":
-        setClicked("Work");
-        break;
-      case "/about":
-        setClicked("About");
-        break;
-      case "/articles":
-        setClicked("Articles");
-        break;
-      case "/personal-mba":
-        setClicked("MBA");
-        break;
-      case "/":
-        setClicked("Home");
-        break;
-      default:
-        setClicked("Home");
-    }
-  }, [pathname]);
+const iconButtonClass =
+  "flex items-center justify-center w-9 h-9 rounded-full text-gray-700 hover:bg-gray-800 hover:text-white transition-colors duration-200";
+
+function IconLink({ href, download, icon: Icon, label }) {
+  const linkProps = download
+    ? { download }
+    : { target: "_blank", rel: "noopener noreferrer" };
 
   return (
-    <div className="relative">
-      {/* Navbar */}
-      <div className="flex items-center justify-between h-16 w-full md:max-w-screen-md mx-auto px-6 md:mt-5">
-        {/* Logo */}
-        <Link href="/">
-          <button onClick={() => setClicked("Home")}>
-            <div className="flex-shrink-0 mt-4">
+    <div className="relative group flex items-center justify-center">
+      <a href={href} {...linkProps} aria-label={label} className={iconButtonClass}>
+        <Icon size={18} weight="bold" />
+      </a>
+      <span
+        className="pointer-events-none absolute -top-9 left-1/2 -translate-x-1/2 whitespace-nowrap
+rounded-md bg-gray-900 px-2 py-1 text-xs font-medium text-white opacity-0 scale-95
+transition-all duration-150 group-hover:opacity-100 group-hover:scale-100 z-50"
+      >
+        {label}
+      </span>
+    </div>
+  );
+}
+
+export function TopBar() {
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [clicked, setClicked] = useState("Home");
+
+  useEffect(() => {
+    const elements = SECTIONS.map(({ id }) => document.getElementById(id)).filter(
+      Boolean
+    );
+    if (elements.length === 0) return;
+
+    const idToLabel = Object.fromEntries(
+      SECTIONS.map(({ id, label }) => [id, label])
+    );
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setClicked(idToLabel[entry.target.id]);
+          }
+        });
+      },
+      { rootMargin: "-40% 0px -55% 0px", threshold: 0 }
+    );
+
+    elements.forEach((el) => observer.observe(el));
+    return () => observer.disconnect();
+  }, []);
+
+  const scrollToSection = useCallback(
+    (id) => (e) => {
+      e.preventDefault();
+      const el = document.getElementById(id);
+      if (el) {
+        const reducedMotion = window.matchMedia(
+          "(prefers-reduced-motion: reduce)"
+        ).matches;
+        el.scrollIntoView({
+          behavior: reducedMotion ? "auto" : "smooth",
+          block: "start",
+        });
+      }
+      setMenuOpen(false);
+    },
+    []
+  );
+
+  return (
+    <div className="relative w-full px-6 sm:px-4">
+      {/* Floating pill navbar */}
+      <div className="mt-4 md:mt-5 max-w-[92vw] md:max-w-screen-md mx-auto rounded-full bg-white/70 backdrop-blur-md shadow-md">
+        <div className="flex items-center h-16 w-full px-4 md:px-6">
+          {/* Logo */}
+          <a href="#hero" onClick={scrollToSection("hero")}>
+            <div className="flex-shrink-0">
               <Image
                 src="/sign_black_and_red.png"
                 alt="Sign Icon"
-                width={100}
-                height={40}
-              />{" "}
+                width={90}
+                height={36}
+              />
             </div>
-          </button>
-        </Link>
-
-        {/* Desktop Nav (Centered) */}
-        <div className="hidden md:flex items-center justify-center gap-4 flex-1 mt-4">
-          <Link href="/">
-            <button onClick={() => setClicked("Home")}>
-              <WavyUnderline text={"Home"} selected={clicked} />
-            </button>
-          </Link>
-          <Star size={14} weight={"fill"} />
-          <Link href="/work">
-            <button onClick={() => setClicked("Work")}>
-              <WavyUnderline text={"Work"} selected={clicked} />
-            </button>
-          </Link>
-          <Star size={14} weight={"fill"} />
-          <Link href="/articles">
-            <button onClick={() => setClicked("Articles")}>
-              <WavyUnderline text={"Articles"} selected={clicked} />
-            </button>
-          </Link>
-          <Star size={14} weight={"fill"} />
-          <Link href="/about">
-            <button onClick={() => setClicked("About")}>
-              <WavyUnderline text={"About"} selected={clicked} />
-            </button>
-          </Link>
-        </div>
-
-        {/* Desktop Action Buttons (Right aligned) */}
-        <div className="hidden md:flex gap-3 items-center mt-4">
-          <a
-            href="https://x.com/lasitha_e"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group flex items-center h-10 bg-gray-800 text-white pl-2 pr-0 hover:pr-3 rounded-full transition-all duration-200"
-          >
-            <span className="w-6 h-6 flex items-center justify-center">
-              <ChatTeardropText size={14} />
-            </span>
-            <span className="ml-2 overflow-hidden max-w-0 opacity-0 group-hover:max-w-[160px] group-hover:opacity-100 transition-all duration-300 text-sm whitespace-nowrap">
-              Connect
-            </span>
           </a>
 
-          <a
-            href="/resume.pdf"
-        download="Lasitha_E_PM_Resume.pdf"
-            className="group flex items-center h-10 bg-gray-800 text-white pl-2 pr-0 hover:pr-3 rounded-full transition-all duration-200"
-          >
-            <span className="w-6 h-6 flex items-center justify-center">
-              <DownloadSimple size={14} />
-            </span>
-            <span className="ml-2 overflow-hidden max-w-0 opacity-0 group-hover:max-w-[200px] group-hover:opacity-100 transition-all duration-300 text-sm whitespace-nowrap">
-              Resume
-            </span>
-          </a>
-        </div>
-
-        {/* Mobile: Scroll-dependent action buttons */}
-        <div className="md:hidden flex items-center gap-2 text-gray-800 mt-4">
-          {scrolledDown ? (
-            <>
-              <a
-                href="https://x.com/lasitha_e"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-gray-900 text-white p-1 rounded-full"
-              >
-                <ChatTeardropText size={16} />
+          {/* Desktop Nav (Centered) */}
+          <div className="hidden md:flex items-center justify-center gap-5 flex-1">
+            {SECTIONS.map(({ id, label }) => (
+              <a key={id} href={`#${id}`} onClick={scrollToSection(id)}>
+                <WavyUnderline
+                  text={label}
+                  selected={clicked}
+                  textClassName="text-[15.3px]"
+                  weightClassName="font-semibold"
+                />
               </a>
-              <a
-                href="/resume.pdf"
+            ))}
+          </div>
+
+          {/* Desktop Action Icons (Right aligned) */}
+          <div className="hidden md:flex items-center gap-1">
+            {SOCIALS.map((social) => (
+              <IconLink key={social.label} {...social} />
+            ))}
+
+            <div className="w-px h-6 bg-gray-300 mx-2" />
+
+            <IconLink
+              href="/resume.pdf"
               download="Lasitha_E_PM_Resume.pdf"
-                className="bg-gray-900 text-white p-1 rounded-full"
-              >
-                <DownloadSimple size={16} />
-              </a>
-            </>
-          ) : (
-            <button onClick={() => setMenuOpen(!menuOpen)}>
-              <List size={28} />
+              icon={FileArrowDown}
+              label="Resume"
+            />
+          </div>
+
+          {/* Mobile: hamburger */}
+          <div className="md:hidden flex items-center text-gray-800 ml-auto">
+            <button onClick={() => setMenuOpen(!menuOpen)} aria-label="Open menu">
+              <List size={26} />
             </button>
-          )}
+          </div>
         </div>
       </div>
 
-      {/* Mobile Menu Overlay */}
+      {/* Mobile: persistent floating bottom bar (socials + resume, always visible) */}
+      <div className="md:hidden fixed bottom-4 inset-x-4 z-50 flex items-center justify-center gap-1 rounded-full bg-white/70 backdrop-blur-md shadow-md py-2">
+        {SOCIALS.map((social) => (
+          <IconLink key={social.label} {...social} />
+        ))}
+        <div className="w-px h-6 bg-gray-300 mx-1" />
+        <IconLink
+          href="/resume.pdf"
+          download="Lasitha_E_PM_Resume.pdf"
+          icon={FileArrowDown}
+          label="Resume"
+        />
+      </div>
+
+      {/* Mobile Menu Overlay (nav links only — socials live in the floating bottom bar) */}
       {menuOpen && (
-        <div className="absolute top-0 left-0 w-full h-screen bg-black/50 flex flex-col items-center justify-center z-50">
+        <div className="fixed top-0 left-0 w-full h-screen bg-black/50 flex flex-col items-center justify-center z-50">
           <div className="bg-white p-8 rounded-lg shadow-lg w-[80%] max-w-[400px] flex flex-col items-center">
             <button
               className="absolute top-4 right-4 text-gray-800"
               onClick={() => setMenuOpen(false)}
+              aria-label="Close menu"
             >
               <X size={24} />
             </button>
 
             <nav className="flex flex-col gap-6 text-xl mt-6">
-              <button
-                className="cursor-default"
-                onClick={() => {
-                  setClicked("Home");
-                  setMenuOpen(false);
-                }}
-              >
-                <Link href="/">
-                  <WavyUnderline text={"Home"} selected={clicked} />
-                </Link>
-              </button>
-              <button
-                className="cursor-pointer"
-                onClick={() => {
-                  setClicked("Articles");
-                  setMenuOpen(false);
-                }}
-              >
-                <Link href="/articles">
-                  <WavyUnderline text={"Articles"} selected={clicked} />
-                </Link>
-              </button>
-              <button
-                className="cursor-pointer"
-                onClick={() => {
-                  setClicked("Work");
-                  setMenuOpen(false);
-                }}
-              >
-                <Link href="/work">
-                  <WavyUnderline text={"Work"} selected={clicked} />
-                </Link>
-              </button>
-              <button
-                className="cursor-pointer"
-                onClick={() => {
-                  setClicked("About");
-                  setMenuOpen(false);
-                }}
-              >
-                <Link href="/about">
-                  <WavyUnderline text={"About"} selected={clicked} />
-                </Link>
-              </button>
+              {SECTIONS.map(({ id, label }) => (
+                <a key={id} href={`#${id}`} onClick={scrollToSection(id)}>
+                  <WavyUnderline text={label} selected={clicked} />
+                </a>
+              ))}
             </nav>
           </div>
         </div>

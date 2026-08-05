@@ -9,7 +9,7 @@ export const ImageTray = () => {
     alt="Landing Page Photo"
     width={300}
     height={300}
-    className={`rounded-[16px]`}/>
+    className="rounded-[16px] w-full h-auto md:w-[300px] md:h-full object-cover"/>
 //     <div className="flex flex-col items-center justify-center w-full max-w-[92vw] md:max-w-screen-md mx-auto mt-5 md:mt-20">
 //       <div className="relative flex justify-center items-center w-full group">
 //         <Image

@@ -1,0 +1,2 @@
+export const MAX_COMMENT_NAME_LENGTH = 40;
+export const MAX_COMMENT_MESSAGE_LENGTH = 280;

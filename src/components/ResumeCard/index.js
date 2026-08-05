@@ -4,40 +4,42 @@ import Image from "next/image";
 
 const ResumeCard = ({ item }) => {
   return (
-    <div className="bg-white shadow-xl p-6 rounded-xl w-full max-w-xl">
-      <div
-        className="rounded-[16px] p-6 mb-4"
-        style={{
-          background: "linear-gradient(225deg,rgb(255, 255, 255), #ffffff)",
-          boxShadow: "-6px 6px 12px rgb(241, 241, 241),6px -6px 12px #ffffff",
-        }}
-      >
-        <div className="flex flex-row gap-4">
+    <div className="bg-white/60 backdrop-blur-md shadow-xl p-4 sm:p-6 rounded-xl w-full">
+      <div className="rounded-[16px] p-4 sm:p-6 mb-4 bg-white/40 backdrop-blur-sm">
+        <div className="flex flex-row gap-3 sm:gap-4">
           {" "}
-          <div className="w-16 h-16 rounded-full overflow-hidden border-4 border-gray-300 shadow-md bg-white">
-            <Image
-              src={item.icon}
-              alt={`${item.company} logo`}
-              width={100}
-              height={100}
-              className="object-cover w-full h-full"
-            />
+          <div className="w-12 h-12 sm:w-16 sm:h-16 shrink-0 rounded-full overflow-hidden border-4 border-gray-300 shadow-md bg-white flex items-center justify-center">
+            {item.icon ? (
+              <Image
+                src={item.icon}
+                alt={`${item.company} logo`}
+                width={100}
+                height={100}
+                className="object-cover w-full h-full"
+              />
+            ) : (
+              <span className="text-lg font-bold text-gray-500">
+                {item.company.charAt(0)}
+              </span>
+            )}
           </div>{" "}
-          <div className="w-2/3">
-            <h3 className="text-xl font-bold font-jost mb-1">{item.company}</h3>
-            <div className="flex flex-row justify-between">
-              {" "}
-              <p className="text-sm font-medium text-gray-600">
-                {item.title} – {item.location}
+          <div className="flex-1 min-w-0">
+            <h3 className="text-base sm:text-xl font-bold mb-1 text-orange-900">
+              {item.title}
+            </h3>
+            <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-0.5 sm:gap-2">
+              <p className="text-xs sm:text-sm font-medium text-gray-600">
+                {item.company}
+                {item.companyDescription ? ` (${item.companyDescription})` : ""}, {item.location}
               </p>
-              <p className="text-sm italic text-gray-500 mb-2">
+              <span className="text-xs sm:text-sm text-gray-500 whitespace-nowrap">
                 {item.experience}
-              </p>
+              </span>
             </div>
           </div>
         </div>
       </div>
-      <ul className="list-none text-[15px] font-jost">
+      <ul className="list-none text-[15px]">
         {item.works.map((work, idx) => (
           <li key={idx} className="flex items-start mb-1 gap-2">
             <span role="img" aria-label="star">

@@ -1,5 +1,14 @@
 @import "tailwindcss";
 
+html {
+  scroll-behavior: smooth;
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
 @font-face {
   font-family: 'Loverine';
   src: url('/fonts/Loverine.otf') format('opentype');
@@ -44,7 +53,7 @@ body::-webkit-scrollbar {
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Inter Tight", sans-serif;
   -ms-overflow-style: none;
   scrollbar-width: none;
   scrollbar-color: transparent;
@@ -61,14 +70,11 @@ body::-webkit-scrollbar {
 .font-instrument {
   font-family: "Instrument", sans-serif;
 }
-.font-jost {
-  font-family: "Jost", sans-serif;
-}
 .font-pixelify {
   font-family: "Pixelify Sans", sans-serif;
 }
 .font-inter {
-  font-family: "Inter-Tight", sans-serif;
+  font-family: "Inter Tight", sans-serif;
 }
 .icon-container {
   transition: transform 0.3s ease;

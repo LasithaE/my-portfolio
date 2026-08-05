@@ -9,7 +9,7 @@ export function TopBarWrapper() {
   if (hideTopBar) return null;
 
   return (
-    <div className="sticky top-0 z-50 bg-white md:bg-transparent md:static">
+    <div className="sticky top-0 z-50">
       <TopBar />
     </div>
   );

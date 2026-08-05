@@ -1,11 +1,15 @@
 import { motion } from "framer-motion";
-import { useState } from "react";
 
-const WavyUnderline = ({ text, selected, textClassName, className }) => {
-
+const WavyUnderline = ({ text, selected, textClassName, weightClassName, className }) => {
   return (
     <div className={`relative inline-block ${className}`}>
-      <span className={`font-semibold cursor-normal ${textClassName??'text-[18px]'}`}>{text}</span>
+      <span
+        className={`${weightClassName ?? "font-semibold"} cursor-normal ${
+          textClassName ?? "text-[18px]"
+        }`}
+      >
+        {text}
+      </span>
       {selected === text && (
         <motion.div
           className="absolute left-0 bottom-0 w-full h-1"

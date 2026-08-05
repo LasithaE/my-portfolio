@@ -3,11 +3,11 @@ import React from "react";
 import { motion } from "framer-motion";
 import ResumeCard from "../ResumeCard";
 import Image from "next/image";
-import { resume } from "@/app/articles/resume";
+import { resume } from "@/data/resume";
 
 const ResumeTimeline = () => {
   return (
-    <div className="w-full py-16 px-4 flex justify-center">
+    <div className="w-full pb-8">
       {/* Timeline container */}
       <div className="relative w-full">
         {resume.map((item, index) => (

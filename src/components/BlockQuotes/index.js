@@ -1,80 +1,66 @@
 "use client";
 import React from "react";
-import Image from "next/image";
 
 export const BlockQuotes = () => {
   return (
     <div className="flex flex-col mx-auto">
       <div className="mb-5">
-        <span className="font-bold text-[22px] md:text-[26px] italic">Hey, I am Lasitha E 👋🏻</span>
-        <br />
-        <i>
-          <span style={{
-              fontFamily: "Jost", fontStyle:"normal"
-          }} className="text-[16px] text-[#364153]">
-            Product Manager in the making with{" "}
-            <strong>3+ years of experience in fast-paced startups</strong> as a{" "}
-            <strong>frontend developer and project lead</strong>.
-            <br />
-            Skilled in collaboration, user-first thinking, and
-            execution. Currently building case studies and
-            doing user research to move into product.
-          </span>
-        </i>
+        <span className="font-bold text-[16px] md:text-[22px]">Hey, I am Lasitha E 👋🏻</span>
+        <ul
+          style={{ fontStyle: "normal" }}
+          className="text-[16px] text-[#364153] list-none flex flex-col gap-5 mt-4"
+        >
+          <li className="flex items-start gap-2">
+            <span role="img" aria-label="star">⭐️</span>
+            <span>
+              Ex-quickcomm PM, with{" "}
+              <span className="bg-orange-100 text-orange-900 rounded px-1.5 py-0.5 font-semibold">
+                3 years of tech dev experience
+              </span>
+              .
+            </span>
+          </li>
+          <li className="flex items-start gap-2">
+            <span role="img" aria-label="star">⭐️</span>
+            <span>
+              Product Manager in the making with{" "}
+              <span className="bg-blue-100 text-blue-900 rounded px-1.5 py-0.5 font-semibold">
+                4+ years of experience in fast-paced startups
+              </span>{" "}
+              as a{" "}
+              <span className="bg-purple-100 text-purple-900 rounded px-1.5 py-0.5 font-semibold">
+                frontend developer and project lead
+              </span>
+              .
+            </span>
+          </li>
+          <li className="flex items-start gap-2">
+            <span role="img" aria-label="star">⭐️</span>
+            <span>
+              Skilled in{" "}
+              <span className="bg-orange-100 text-orange-900 rounded px-1.5 py-0.5 font-semibold">
+                collaboration, user-first thinking, and execution
+              </span>
+              .
+            </span>
+          </li>
+          <li className="flex items-start gap-2">
+            <span role="img" aria-label="star">⭐️</span>
+            <span>
+              Currently building{" "}
+              <span className="bg-blue-100 text-blue-900 rounded px-1.5 py-0.5 font-semibold">
+                ai products
+              </span>{" "}
+              to learn{" "}
+              <span className="bg-purple-100 text-purple-900 rounded px-1.5 py-0.5 font-semibold">
+                gtm and marketing
+              </span>{" "}
+              otw.
+            </span>
+          </li>
+        </ul>
       </div>
 
-      <div className="flex flex-wrap justify-center md:justify-between gap-4 text-[16px] md:text-[18px] items-center text-center md:mt-6">
-        <div className="flex flex-col justify-center gap-6 w-full mb-2 text-[16px] md:text-[18px] text-[#364153]">
-          <div className="relative">
-            <span className="absolute -top-3 -left-3 text-[24px] rotate-[-36deg] z-10">
-              🎧
-            </span>
-            <div className="flex items-center justify-between gap-4 border bg-white border-gray-300 shadow-md rounded-md p-2 pl-6">
-              <div className="text-start">
-                <p className="text-[16px]">
-                  <span className="font-bold italic">
-                    Currently listening to:
-                  </span>{" "}
-                  Lenny's Podcast
-                </p>
-              </div>
-
-              <div className="p-1 border border-gray-300 shadow-md hover:scale-110 hover:rotate-[5deg] transition rounded-md bg-white backdrop-blur-md">
-                <Image
-                  src="/current_podcast.png"
-                  alt="Podcast Icon"
-                  width={50}
-                  height={50}
-                  className="rounded-md"
-                />
-              </div>
-            </div>
-          </div>
-          <div className="relative">
-            <span className="absolute -top-3 -left-3 text-[24px] rotate-[-36deg] z-10">
-              📖
-            </span>
-            <div className="flex items-center justify-between gap-4 border bg-white border-gray-300 shadow-md rounded-md p-2 pl-6">
-              <div className="text-start">
-                <p className="text-[16px]">
-                  <span className="font-bold italic">Currently reading:</span>{" "}
-                  Cracking the PM Interview
-                </p>
-              </div>
-
-              <div className="p-1 border border-gray-300 shadow-md hover:scale-110 hover:rotate-[5deg] transition rounded-md bg-white backdrop-blur-md">
-                <Image
-                  src="/current_book.png"
-                  alt="Podcast Icon"
-                  width={50}
-                  height={50}
-                  className="rounded-md"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
   );
 };
