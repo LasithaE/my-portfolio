@@ -25,15 +25,17 @@ function ProjectCard({ project }) {
         ))}
       </div>
       <div className="flex items-center gap-2 mt-1">
-        <a
-          href={project.url}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex items-center gap-1.5 rounded-full border border-gray-300 text-gray-700 text-[13px] font-semibold px-3.5 py-1.5 hover:bg-gray-100 transition-colors"
-        >
-          <PlayCircle size={15} weight="bold" />
-          Walkthrough
-        </a>
+        {project.videoUrl && (
+          <a
+            href={project.videoUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-1.5 rounded-full border border-gray-300 text-gray-700 text-[13px] font-semibold px-3.5 py-1.5 hover:bg-gray-100 transition-colors"
+          >
+            <PlayCircle size={15} weight="bold" />
+            Walkthrough
+          </a>
+        )}
         <a
           href={project.url}
           target="_blank"
