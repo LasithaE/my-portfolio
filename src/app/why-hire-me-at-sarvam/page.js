@@ -7,9 +7,6 @@ export default function WhyHireMeAtSarvam() {
   return (
     <section className="w-full px-6 sm:px-4 mt-12">
       <div className="w-full max-w-[92vw] md:max-w-screen-md mx-auto flex flex-col items-center">
-        <h1 className="text-[20px] md:text-[26px] font-semibold text-gray-800 text-center mb-6">
-          Why hire me at Sarvam
-        </h1>
         <div className="w-full aspect-video rounded-xl overflow-hidden border border-gray-300 shadow-md">
           <iframe
             className="w-full h-full"
