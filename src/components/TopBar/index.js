@@ -1,6 +1,7 @@
 "use client";
 import React, { useState, useEffect, useCallback } from "react";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 import "../../app/globals.css";
 import {
   X,
@@ -67,8 +68,11 @@ transition-all duration-150 group-hover:opacity-100 group-hover:scale-100 z-50"
 export function TopBar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [clicked, setClicked] = useState("Home");
+  const pathname = usePathname();
+  const isHome = pathname === "/";
 
   useEffect(() => {
+    if (!isHome) return;
     const elements = SECTIONS.map(({ id }) => document.getElementById(id)).filter(
       Boolean
     );
@@ -91,10 +95,16 @@ export function TopBar() {
 
     elements.forEach((el) => observer.observe(el));
     return () => observer.disconnect();
-  }, []);
+  }, [isHome]);
 
   const scrollToSection = useCallback(
     (id) => (e) => {
+      if (!isHome) {
+        // Not on the homepage — the section doesn't exist here, so
+        // navigate to the homepage and let it land on the anchor.
+        setMenuOpen(false);
+        return;
+      }
       e.preventDefault();
       const el = document.getElementById(id);
       if (el) {
@@ -108,7 +118,12 @@ export function TopBar() {
       }
       setMenuOpen(false);
     },
-    []
+    [isHome]
+  );
+
+  const sectionHref = useCallback(
+    (id) => (isHome ? `#${id}` : `/#${id}`),
+    [isHome]
   );
 
   return (
@@ -117,7 +132,7 @@ export function TopBar() {
       <div className="mt-4 md:mt-5 max-w-[92vw] md:max-w-screen-md mx-auto rounded-full bg-white/70 backdrop-blur-md shadow-md">
         <div className="flex items-center h-16 w-full px-4 md:px-6">
           {/* Logo */}
-          <a href="#hero" onClick={scrollToSection("hero")}>
+          <a href={sectionHref("hero")} onClick={scrollToSection("hero")}>
             <div className="flex-shrink-0">
               <Image
                 src="/sign_black_and_red.png"
@@ -131,7 +146,7 @@ export function TopBar() {
           {/* Desktop Nav (Centered) */}
           <div className="hidden md:flex items-center justify-center gap-5 flex-1">
             {SECTIONS.map(({ id, label }) => (
-              <a key={id} href={`#${id}`} onClick={scrollToSection(id)}>
+              <a key={id} href={sectionHref(id)} onClick={scrollToSection(id)}>
                 <WavyUnderline
                   text={label}
                   selected={clicked}
@@ -195,7 +210,7 @@ export function TopBar() {
 
             <nav className="flex flex-col gap-6 text-xl mt-6">
               {SECTIONS.map(({ id, label }) => (
-                <a key={id} href={`#${id}`} onClick={scrollToSection(id)}>
+                <a key={id} href={sectionHref(id)} onClick={scrollToSection(id)}>
                   <WavyUnderline text={label} selected={clicked} />
                 </a>
               ))}

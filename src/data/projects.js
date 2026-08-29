@@ -1,5 +1,12 @@
 export const projects = [
   {
+    title: "PM Games",
+    description:
+      "Spin for a random PM content prompt across three games — What If, Growth Signal, and Eval This.",
+    tags: ["Content", "PM Practice"],
+    url: "/pm-games",
+  },
+  {
     title: "Pace - Goal SIP Tracker",
     description:
       "Tracks whether your SIP is still on pace to hit your goal, not just how the market performed.",
