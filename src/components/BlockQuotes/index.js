@@ -13,23 +13,22 @@ export const BlockQuotes = () => {
           <li className="flex items-start gap-2">
             <span role="img" aria-label="star">⭐️</span>
             <span>
-              Ex-quickcomm PM, with{" "}
+              Drove{" "}
               <span className="bg-orange-100 text-orange-900 rounded px-1.5 py-0.5 font-semibold">
-                3 years of tech dev experience
-              </span>
-              .
-            </span>
-          </li>
-          <li className="flex items-start gap-2">
-            <span role="img" aria-label="star">⭐️</span>
-            <span>
-              Product Manager in the making with{" "}
-              <span className="bg-blue-100 text-blue-900 rounded px-1.5 py-0.5 font-semibold">
-                4+ years of experience in fast-paced startups
+                ₹3.3Cr in monthly revenue
               </span>{" "}
-              as a{" "}
+              owning growth, pricing, and retention end to end.
+            </span>
+          </li>
+          <li className="flex items-start gap-2">
+            <span role="img" aria-label="star">⭐️</span>
+            <span>
+              <span className="bg-blue-100 text-blue-900 rounded px-1.5 py-0.5 font-semibold">
+                4+ years in fast-paced startups
+              </span>
+              , close to founders, as a{" "}
               <span className="bg-purple-100 text-purple-900 rounded px-1.5 py-0.5 font-semibold">
-                frontend developer and project lead
+                developer, project lead, and PM
               </span>
               .
             </span>
@@ -37,11 +36,11 @@ export const BlockQuotes = () => {
           <li className="flex items-start gap-2">
             <span role="img" aria-label="star">⭐️</span>
             <span>
-              Skilled in{" "}
+              Built{" "}
               <span className="bg-orange-100 text-orange-900 rounded px-1.5 py-0.5 font-semibold">
-                collaboration, user-first thinking, and execution
+                instrumentation from scratch
               </span>
-              .
+              , designed growth loops, shipped cross-functional at speed.
             </span>
           </li>
           <li className="flex items-start gap-2">
@@ -49,13 +48,13 @@ export const BlockQuotes = () => {
             <span>
               Currently building{" "}
               <span className="bg-blue-100 text-blue-900 rounded px-1.5 py-0.5 font-semibold">
-                ai products
+                AI products
               </span>{" "}
-              to learn{" "}
+              and publishing{" "}
               <span className="bg-purple-100 text-purple-900 rounded px-1.5 py-0.5 font-semibold">
-                gtm and marketing
+                growth teardowns
               </span>{" "}
-              otw.
+              publicly.
             </span>
           </li>
         </ul>
