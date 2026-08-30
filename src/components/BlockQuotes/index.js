@@ -6,6 +6,11 @@ export const BlockQuotes = () => {
     <div className="flex flex-col mx-auto">
       <div className="mb-5">
         <span className="font-bold text-[16px] md:text-[22px]">Hey, I am Lasitha E 👋🏻</span>
+        <div className="mt-3">
+          <span className="inline-block rotate-[-3deg] bg-yellow-300 text-yellow-900 text-[12px] md:text-[13px] font-bold px-3 py-1.5 rounded-lg border-2 border-dashed border-yellow-900/30 shadow-sm">
+            🎯 Open to PM / Growth / Founder&apos;s Office roles
+          </span>
+        </div>
         <ul
           style={{ fontStyle: "normal" }}
           className="text-[16px] text-[#364153] list-none flex flex-col gap-5 mt-4"
